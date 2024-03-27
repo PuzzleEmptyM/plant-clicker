@@ -22,3 +22,30 @@ body, html {
   margin-top: 20px;
   font-size: 24px;
 }
+
+#clicker {
+  background: url('images/potted-plant.webp') no-repeat center / contain;
+  border: none;
+  width: 100px; /* Adjust based on your image's aspect ratio */
+  height: 100px; /* Adjust based on your image's aspect ratio */
+  cursor: pointer;
+}
+
+@keyframes bounceWobble {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+}
+
+.bounceWobble {
+  animation: bounceWobble 0.1s;
+}

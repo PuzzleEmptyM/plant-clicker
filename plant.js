@@ -78,6 +78,15 @@ document.getElementById('clicker').addEventListener('click', function() {
     setCookie('score', score, 7); // Save for 7 days
 });
 
+document.getElementById('clicker').addEventListener('click', function() {
+  this.classList.add('bounceWobble');
+
+  setTimeout(() => {
+      this.classList.remove('bounceWobble');
+  }, 100); // Match the duration of the bounceWobble animation
+});
+
+
 document.getElementById('reset').addEventListener('click', function() {
   score = 0;
   multiplier = 1;
