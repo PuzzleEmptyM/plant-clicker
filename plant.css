@@ -12,22 +12,16 @@ body, html {
   text-align: center;
 }
 
-#clicker {
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 #score {
   margin-top: 20px;
   font-size: 24px;
 }
 
 #clicker {
-  background: url('images/potted-plant.webp') no-repeat center / contain;
+  background: url('images/potted-plant.png') no-repeat center / contain;
   border: none;
-  width: 100px; /* Adjust based on your image's aspect ratio */
-  height: 100px; /* Adjust based on your image's aspect ratio */
+  width: 300px; /* Adjust based on your image's aspect ratio */
+  height: 300px; /* Adjust based on your image's aspect ratio */
   cursor: pointer;
 }
 
