@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clicker Game</title>
+    <link rel="stylesheet" href="plant.css">
+</head>
+<body>
+    <div id="game-container">
+      <div id="multiplier">Multiplier: x1</div>
+      <button id="clicker">This is a potted plant.</button>
+      <div id="score">0</div>
+      <button id="upgrade1" onclick="buyUpgrade1()">Quality Soil - Cost: 50</button>
+      <button id="upgrade2" onclick="buyUpgrade2()">Enhanced Water - Cost: 200</button>
+      <button id="upgrade3" onclick="buyUpgrade3()">Gardening Tools - Cost: 500</button>
+      <button id="reset">Reset Score</button>
+    </div>
+
+    <script src="upgrades.js"></script>
+    <script src="plant.js"></script>
+</body>
+</html>
