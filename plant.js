@@ -52,6 +52,20 @@ window.addEventListener('load', function() {
         multiplier = parseInt(savedMultiplier, 10);
     }
 
+    // Load saved upgrade costs
+    let savedUpgrade1Cost = getCookie('upgrade1Cost');
+    if (savedUpgrade1Cost) {
+        upgrade1Cost = parseInt(savedUpgrade1Cost, 10);
+    }
+    let savedUpgrade2Cost = getCookie('upgrade2Cost');
+    if (savedUpgrade2Cost) {
+        upgrade2Cost = parseInt(savedUpgrade2Cost, 10);
+    }
+    let savedUpgrade3Cost = getCookie('upgrade3Cost');
+    if (savedUpgrade3Cost) {
+        upgrade3Cost = parseInt(savedUpgrade3Cost, 10);
+    }
+
     updateScoreDisplay();
     updateMultiplierDisplay();
     updateUpgradeCosts();
@@ -84,6 +98,7 @@ function buyUpgrade1() {
         updateScoreDisplay();
         updateUpgradeCosts();
         updateMultiplierDisplay();
+        setCookie('upgrade1Cost', upgrade1Cost, 7);
     }
 }
 
@@ -96,6 +111,7 @@ function buyUpgrade2() {
         updateScoreDisplay();
         updateUpgradeCosts();
         updateMultiplierDisplay();
+        setCookie('upgrade2Cost', upgrade2Cost, 7);
     }
 }
 
@@ -108,5 +124,6 @@ function buyUpgrade3() {
         updateScoreDisplay();
         updateUpgradeCosts();
         updateMultiplierDisplay();
+        setCookie('upgrade3Cost', upgrade3Cost, 7);
     }
 }
