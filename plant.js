@@ -106,7 +106,6 @@ function buyUpgrade1() {
         multiplier += 1;
         upgrade1Cost *= 2; // Increase the cost for the next purchase
         setCookie('multiplier', multiplier, 7); // Save updated multiplier
-        // Update displays
         updateScoreDisplay();
         updateUpgradeCosts();
         updateMultiplierDisplay();
