@@ -79,13 +79,25 @@ document.getElementById('clicker').addEventListener('click', function() {
 });
 
 document.getElementById('reset').addEventListener('click', function() {
-    score = 0;
-    multiplier = 1;
-    updateScoreDisplay();
-    updateMultiplierDisplay();
-    deleteCookie('score');
-    setCookie('multiplier', multiplier, 7); // Also reset the multiplier in cookies
+  score = 0;
+  multiplier = 1;
+  upgrade1Cost = 50;
+  upgrade2Cost = 200;
+  upgrade3Cost = 500;
+
+  // Update displays
+  updateScoreDisplay();
+  updateMultiplierDisplay();
+  updateUpgradeCosts();
+
+  // Reset and save the state to cookies
+  deleteCookie('score');
+  setCookie('multiplier', multiplier, 7);
+  setCookie('upgrade1Cost', upgrade1Cost, 7);
+  setCookie('upgrade2Cost', upgrade2Cost, 7);
+  setCookie('upgrade3Cost', upgrade3Cost, 7);
 });
+
 
 // Functions to handle purchasing upgrades
 function buyUpgrade1() {
