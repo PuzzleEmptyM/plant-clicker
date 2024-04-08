@@ -43,3 +43,10 @@ body, html {
 .bounceWobble {
   animation: bounceWobble 0.1s;
 }
+
+.power-up {
+  position: absolute;
+  width: 50px; /* Adjust based on the size of your PNG */
+  height: 50px; /* Adjust based on the size of your PNG */
+  cursor: pointer; /* Indicates clickable items */
+}
