@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
   if (savedMultiplier) {
     multiplier = parseInt(savedMultiplier, 10);
   }
-
+  
   // Load saved upgrade costs
   let savedUpgrade1Cost = getCookie('upgrade1Cost');
   if (savedUpgrade1Cost) {
@@ -65,6 +65,10 @@ window.addEventListener('load', function() {
   if (savedUpgrade3Cost) {
     upgrade3Cost = parseInt(savedUpgrade3Cost, 10);
   }
+
+  setInterval(function() {
+    document.title = "Plant Clicker - Score: " + score;
+  }, 1000)
 
   updateScoreDisplay();
   updateMultiplierDisplay();
@@ -93,7 +97,7 @@ document.getElementById('reset').addEventListener('click', function() {
   upgrade1Cost = 50;
   upgrade2Cost = 200;
   upgrade3Cost = 500;
-
+  
   // Update displays
   updateScoreDisplay();
   updateMultiplierDisplay();
@@ -165,7 +169,7 @@ function showPowerUp() {
   // Click event to apply the multiplier effect
   powerUp.addEventListener('click', () => {
       const originalMultiplier = multiplier;
-      multiplier *= 500; // Increase multiplier
+      multiplier *= 100; // Increase multiplier
 
       updateMultiplierDisplay();
       
@@ -182,9 +186,11 @@ function showPowerUp() {
       if (document.body.contains(powerUp)) {
           powerUp.remove();
       }
-  }, 10000); // 10 seconds
+  }, 5000); // 5 seconds
 }
 
 // Show the power-up randomly once every 1,000 seconds
 setInterval(showPowerUp, 10000);
+
+// script that updates title constantly
 

@@ -1,5 +1,22 @@
 /* style.css */
 
+/* NAVBAR RESPONSIVENESS */
+@media screen and (max-width: 570px) {
+  .plant_clicker_logo img {
+    width: 330px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .plant_clicker_logo img {
+    width: 275px;
+    height: auto;
+  }
+}
+
+
+
 #game-container {
   text-align: center;
 }
