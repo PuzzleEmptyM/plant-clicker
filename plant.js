@@ -154,7 +154,7 @@ function buyUpgrade3() {
 
 function showPowerUp() {
   const powerUp = document.createElement('img');
-  powerUp.src = '/plant-clicker/images/golden-plant.webp'; // Update path
+  powerUp.src = '/plant-clicker/images/GoldenFlowerCoin.png'; // Update path
   powerUp.className = 'power-up';
 
   const container = document.getElementById('game-container');
