@@ -147,3 +147,44 @@ function buyUpgrade3() {
     setCookie('upgrade3Cost', upgrade3Cost, 7);
   }
 }
+
+function showPowerUp() {
+  const powerUp = document.createElement('img');
+  powerUp.src = '/plant-clicker/images/golden-plant.webp'; // Update path
+  powerUp.className = 'power-up';
+
+  const container = document.getElementById('game-container');
+  const { width, height } = container.getBoundingClientRect();
+
+  // Random position within the container
+  powerUp.style.left = `${Math.random() * (width - 50)}px`; // Adjust 50px if your image size changes
+  powerUp.style.top = `${Math.random() * (height - 50)}px`; // Adjust 50px if your image size changes
+
+  container.appendChild(powerUp);
+
+  // Click event to apply the multiplier effect
+  powerUp.addEventListener('click', () => {
+      const originalMultiplier = multiplier;
+      multiplier *= 500; // Increase multiplier
+
+      updateMultiplierDisplay();
+      
+      setTimeout(() => {
+          multiplier = originalMultiplier; // Reset multiplier after 10 seconds
+          updateMultiplierDisplay();
+      }, 10000); // 10 seconds
+
+      powerUp.remove(); // Remove the power-up from the game
+  });
+
+  // Automatically remove the power-up after 10 seconds if not clicked
+  setTimeout(() => {
+      if (document.body.contains(powerUp)) {
+          powerUp.remove();
+      }
+  }, 10000); // 10 seconds
+}
+
+// Show the power-up randomly once every 1,000 seconds
+setInterval(showPowerUp, 100000);
+
