@@ -168,7 +168,7 @@ function lvl_up() {
   if (score >= lvlUpCost) {
     flag += 1;
     score -= lvlUpCost;
-    lvlUpCost *= 5;
+    lvlUpCost *= 10;
     multiplier *=10;
     setCookie('multiplier', multiplier, 7);
     updateScoreDisplay();
@@ -181,8 +181,11 @@ function lvl_up() {
   }
   if (flag === 3) {
     plantImg.classList.replace('plantLvl2','plantLvl3');
+    document.getElementById('lvl_up').textContent = 'Next Biome Upgrade: ' + lvlUpCost;
   }
-
+  if (flag === 4) {
+    // reset and go to next biome
+  }
 }
 
 function showPowerUp() {
