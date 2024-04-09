@@ -27,7 +27,6 @@
 }
 
 #clicker {
-  background: url('images/lvl1plant.png') no-repeat center / contain;
   border: none;
   width: 300px; /* Adjust based on your image's aspect ratio */
   height: 300px; /* Adjust based on your image's aspect ratio */
@@ -61,6 +60,14 @@
 }
 
 /* Plant LVLS */
+
+.plantLvl1 {
+  background: url('images/lvl1plant.png') no-repeat center / contain;
+  border: none;
+  width: 300px; /* Adjust based on your image's aspect ratio */
+  height: 300px; /* Adjust based on your image's aspect ratio */
+  cursor: pointer;
+}
 
 .plantLvl2 {
   background: url('images/lvl2plant.png') no-repeat center / contain;

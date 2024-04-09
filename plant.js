@@ -161,8 +161,9 @@ function buyUpgrade3() {
   }
 }
 
+var flag = 1;
+
 function lvl_up() {
-  let flag = 1;
   var plantImg = document.getElementById('clicker');
   if (score >= lvlUpCost) {
     flag += 1;
@@ -175,13 +176,13 @@ function lvl_up() {
     updateMultiplierDisplay();
     setCookie('lvlUpCost', lvlUpCost, 7);
   }
-
   if (flag === 2) {
-    plantImg.className = 'plantLvl2';
+    plantImg.classList.replace('plantLvl1','plantLvl2');
   }
   if (flag === 3) {
-    plantImg.className = 'plantLvl3';
+    plantImg.classList.replace('plantLvl2','plantLvl3');
   }
+
 }
 
 function showPowerUp() {
