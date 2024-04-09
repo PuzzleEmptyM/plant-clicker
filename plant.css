@@ -53,10 +53,10 @@
 }
 
 .power-up {
-  position: absolute;
   width: 50px; /* Adjust based on the size of your PNG */
   height: 50px; /* Adjust based on the size of your PNG */
   cursor: pointer; /* Indicates clickable items */
+  position: absolute;
 }
 
 /* Plant LVLS */
