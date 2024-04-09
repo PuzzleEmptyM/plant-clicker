@@ -219,7 +219,7 @@ function applyPassiveIncome() {
 }
 
 // Call this function every second to apply passive income
-setInterval(applyPassiveIncome, 1000);
+setInterval(applyPassiveIncome, 10);
 
 // Ensure to add the new functions to the load event listener to load saved costs
 window.addEventListener('load', function() {
