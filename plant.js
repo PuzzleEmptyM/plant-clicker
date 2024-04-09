@@ -11,19 +11,34 @@ let upgrade2Cost = 200;
 let upgrade3Cost = 500;
 let lvlUpCost = 10000;
 
+// Function to format numbers
+function formatNumber(number) {
+  if (number >= 1000000000000000) {
+    return (number / 1000000000000000).toFixed(1) + 'q';
+  } else if (number >= 1000000000000) {
+    return (number / 1000000000000).toFixed(1) + 'T';
+  } else if (number >= 1000000000) {
+    return (number / 1000000000).toFixed(1) + 'B';
+  } else if (number >= 1000000) {
+    return (number / 1000000).toFixed(1) + 'M';
+  } else {
+    return number.toLocaleString();
+  }
+}
+
 function updateScoreDisplay() {
-  document.getElementById('score').innerText = score;
+  document.getElementById('score').innerText = formatNumber(score);
 }
 
 function updateMultiplierDisplay() {
-  document.getElementById('multiplier').innerText = `Clicker Multiplier: x${multiplier}`;
+  document.getElementById('multiplier').innerText = `Clicker Multiplier: x${formatNumber(multiplier)}`;
 }
 
 function updateUpgradeCosts() {
-  document.getElementById('upgrade1').innerText = `Quality Soil (+1 multiplier) - Cost: ${upgrade1Cost}`;
-  document.getElementById('upgrade2').innerText = `Enhanced Water (+2 multiplier) - Cost: ${upgrade2Cost}`;
-  document.getElementById('upgrade3').innerText = `Gardening Tools (+3 multiplier) - Cost: ${upgrade3Cost}`;
-  document.getElementById('lvl_up').innerText = `LVL UP! - Cost: ${lvlUpCost}`;
+  document.getElementById('upgrade1').innerText = `Quality Soil (+1 multiplier) - Cost: ${formatNumber(upgrade1Cost)}`;
+  document.getElementById('upgrade2').innerText = `Enhanced Water (+2 multiplier) - Cost: ${formatNumber(upgrade2Cost)}`;
+  document.getElementById('upgrade3').innerText = `Gardening Tools (+3 multiplier) - Cost: ${formatNumber(upgrade3Cost)}`;
+  document.getElementById('lvl_up').innerText = `LVL UP! - Cost: ${formatNumber(lvlUpCost)}`;
 }
 
 function getCookie(name) {
@@ -280,7 +295,7 @@ function lvl_up() {
   }
   if (flag === 3) {
     plantImg.classList.replace('plantLvl2','plantLvl3');
-    document.getElementById('lvl_up').textContent = 'Next Biome Upgrade: ' + lvlUpCost;
+    document.getElementById('lvl_up').textContent = 'Next Biome Upgrade: ' + formatNumber(lvlUpCost);
   }
   if (flag === 4) {
     // reset and go to next biome
