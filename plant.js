@@ -3,9 +3,9 @@ let multiplier = 1; // Initialize to 1 to ensure the game starts correctly
 
 // Upgrade costs
 
-let passive1Cost = 500;
-let passive2Cost = 1000;
-let passive3Cost = 15000;
+const passive1Cost = 500;
+const passive2Cost = 1000;
+const passive3Cost = 15000;
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
 let upgrade3Cost = 500;
@@ -16,7 +16,7 @@ function updateScoreDisplay() {
 }
 
 function updateMultiplierDisplay() {
-  document.getElementById('multiplier').innerText = `Multiplier: x${multiplier}`;
+  document.getElementById('multiplier').innerText = `Clicker Multiplier: x${multiplier}`;
 }
 
 function updateUpgradeCosts() {
@@ -164,6 +164,101 @@ function buyUpgrade3() {
     setCookie('upgrade3Cost', upgrade3Cost, 7);
   }
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+// Variables to hold the income rates for passive upgrades
+let passiveIncomeRate1 = 0;
+let passiveIncomeRate2 = 0;
+let passiveIncomeRate3 = 0;
+
+function buyPassive1() {
+  if (score >= passive1Cost) {
+    score -= passive1Cost;
+    passiveIncomeRate1 += 1; // Increase passive income rate
+    passive1Cost *= 2; // Increase the cost for the next purchase
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    setCookie('passive1Cost', passive1Cost, 7); // Save updated cost
+  }
+}
+
+function buyPassive2() {
+  if (score >= passive2Cost) {
+    score -= passive2Cost;
+    passiveIncomeRate2 += 10; // Increase passive income rate more significantly
+    passive2Cost *= 2;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    setCookie('passive2Cost', passive2Cost, 7);
+  }
+}
+
+function buyPassive3() {
+  if (score >= passive3Cost) {
+    score -= passive3Cost;
+    passiveIncomeRate3 += 50; // Even more significant increase
+    passive3Cost *= 2;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    setCookie('passive3Cost', passive3Cost, 7);
+  }
+}
+
+// Ensure the passive income rates are applied
+function applyPassiveIncome() {
+  score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3;
+  updateScoreDisplay();
+}
+
+// Call this function every second to apply passive income
+setInterval(applyPassiveIncome, 1000);
+
+// Ensure to add the new functions to the load event listener to load saved costs
+window.addEventListener('load', function() {
+  // Existing load code...
+  
+  let savedPassive1Cost = getCookie('passive1Cost');
+  if (savedPassive1Cost) {
+    passive1Cost = parseInt(savedPassive1Cost, 10);
+  }
+  
+  let savedPassive2Cost = getCookie('passive2Cost');
+  if (savedPassive2Cost) {
+    passive2Cost = parseInt(savedPassive2Cost, 10);
+  }
+  
+  let savedPassive3Cost = getCookie('passive3Cost');
+  if (savedPassive3Cost) {
+    passive3Cost = parseInt(savedPassive3Cost, 10);
+  }
+
+  // Don't forget to update the display of costs for these new passive upgrades
+  updateUpgradeCosts();
+});
+
+function updateUpgradeCosts() {
+  // Existing update code...
+
+  // Update passive upgrade costs
+  document.getElementById('passive1').innerText = `Better Sunlight - Cost: ${passive1Cost}`;
+  document.getElementById('passive2').innerText = `Temperature Control - Cost: ${passive2Cost}`;
+  document.getElementById('passive3').innerText = `Humidity Control - Cost: ${passive3Cost}`;
+}
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+
 
 var flag = 1;
 
