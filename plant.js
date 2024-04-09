@@ -5,6 +5,7 @@ let multiplier = 1; // Initialize to 1 to ensure the game starts correctly
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
 let upgrade3Cost = 500;
+let lvlUpCost = 10000;
 
 function updateScoreDisplay() {
   document.getElementById('score').innerText = score;
@@ -18,6 +19,7 @@ function updateUpgradeCosts() {
   document.getElementById('upgrade1').innerText = `Quality Soil - Cost: ${upgrade1Cost}`;
   document.getElementById('upgrade2').innerText = `Enhanced Water - Cost: ${upgrade2Cost}`;
   document.getElementById('upgrade3').innerText = `Gardening Tools - Cost: ${upgrade3Cost}`;
+  document.getElementById('lvl_up').innerText = `LVL UP! - Cost: ${lvlUpCost}`;
 }
 
 function getCookie(name) {
@@ -66,6 +68,11 @@ window.addEventListener('load', function() {
     upgrade3Cost = parseInt(savedUpgrade3Cost, 10);
   }
 
+  let savedLvlUpCost = getCookie('lvlUpCost');
+  if (savedLvlUpCost) {
+    lvlUpCost = parseInt(savedLvlUpCost, 10);
+  }
+
   setInterval(function() {
     document.title = "Plant Clicker - Score: " + score;
   }, 1000)
@@ -97,6 +104,7 @@ document.getElementById('reset').addEventListener('click', function() {
   upgrade1Cost = 50;
   upgrade2Cost = 200;
   upgrade3Cost = 500;
+  lvlUpCost = 10000;
   
   // Update displays
   updateScoreDisplay();
@@ -109,6 +117,7 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('upgrade1Cost', upgrade1Cost, 7);
   setCookie('upgrade2Cost', upgrade2Cost, 7);
   setCookie('upgrade3Cost', upgrade3Cost, 7);
+  setCookie('lvlUpCost', lvlUpCost, 7);
 });
 
 
@@ -149,6 +158,29 @@ function buyUpgrade3() {
     updateUpgradeCosts();
     updateMultiplierDisplay();
     setCookie('upgrade3Cost', upgrade3Cost, 7);
+  }
+}
+
+function lvl_up() {
+  let flag = 1;
+  var plantImg = document.getElementById('clicker');
+  if (score >= lvlUpCost) {
+    flag += 1;
+    score -= lvlUpCost;
+    lvlUpCost *= 5;
+    multiplier *=10;
+    setCookie('multiplier', multiplier, 7);
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updateMultiplierDisplay();
+    setCookie('lvlUpCost', lvlUpCost, 7);
+  }
+
+  if (flag === 2) {
+    plantImg.className = 'plantLvl2';
+  }
+  if (flag === 3) {
+    plantImg.className = 'plantLvl3';
   }
 }
 

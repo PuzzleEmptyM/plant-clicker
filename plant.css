@@ -27,7 +27,7 @@
 }
 
 #clicker {
-  background: url('images/potted-plant.png') no-repeat center / contain;
+  background: url('images/lvl1plant.png') no-repeat center / contain;
   border: none;
   width: 300px; /* Adjust based on your image's aspect ratio */
   height: 300px; /* Adjust based on your image's aspect ratio */
@@ -58,4 +58,22 @@
   width: 50px; /* Adjust based on the size of your PNG */
   height: 50px; /* Adjust based on the size of your PNG */
   cursor: pointer; /* Indicates clickable items */
+}
+
+/* Plant LVLS */
+
+.plantLvl2 {
+  background: url('images/lvl2plant.png') no-repeat center / contain;
+  border: none;
+  width: 300px; /* Adjust based on your image's aspect ratio */
+  height: 300px; /* Adjust based on your image's aspect ratio */
+  cursor: pointer;
+}
+
+.plantLvl3 {
+  background: url('images/lvl3plant.png') no-repeat center / contain;
+  border: none;
+  width: 300px; /* Adjust based on your image's aspect ratio */
+  height: 300px; /* Adjust based on your image's aspect ratio */
+  cursor: pointer;
 }
