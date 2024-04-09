@@ -2,6 +2,10 @@ let score = 0;
 let multiplier = 1; // Initialize to 1 to ensure the game starts correctly
 
 // Upgrade costs
+
+let passive1Cost = 500;
+let passive2Cost = 1000;
+let passive3Cost = 15000;
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
 let upgrade3Cost = 500;
@@ -16,9 +20,9 @@ function updateMultiplierDisplay() {
 }
 
 function updateUpgradeCosts() {
-  document.getElementById('upgrade1').innerText = `Quality Soil - Cost: ${upgrade1Cost}`;
-  document.getElementById('upgrade2').innerText = `Enhanced Water - Cost: ${upgrade2Cost}`;
-  document.getElementById('upgrade3').innerText = `Gardening Tools - Cost: ${upgrade3Cost}`;
+  document.getElementById('upgrade1').innerText = `Quality Soil (+1 multiplier) - Cost: ${upgrade1Cost}`;
+  document.getElementById('upgrade2').innerText = `Enhanced Water (+2 multiplier) - Cost: ${upgrade2Cost}`;
+  document.getElementById('upgrade3').innerText = `Gardening Tools (+3 multiplier) - Cost: ${upgrade3Cost}`;
   document.getElementById('lvl_up').innerText = `LVL UP! - Cost: ${lvlUpCost}`;
 }
 
@@ -194,11 +198,13 @@ function showPowerUp() {
   powerUp.className = 'power-up';
 
   const container = document.getElementById('game-container');
+  container.style.position = 'relative';
+  container.style.padding = "p-1"
   const { width, height } = container.getBoundingClientRect();
 
   // Random position within the container
-  powerUp.style.left = `${Math.random() * (width - 50)}px`; // Adjust 50px if your image size changes
-  powerUp.style.top = `${Math.random() * (height - 50)}px`; // Adjust 50px if your image size changes
+  powerUp.style.left = `${Math.random() * (width +1)}px`; // Adjust 50px if your image size changes
+  powerUp.style.top = `${Math.random() * (height +1)}px`; // Adjust 50px if your image size changes
 
   container.appendChild(powerUp);
 
