@@ -42,32 +42,32 @@
       </div>
     </nav>
   </header>
-  <div class="everything_container mt-5 container-fluid row flex-column-reverse mx-auto flex-md-row">
-  <section class="container col-12 col-lg-4 text-center" style="border: 5px dashed green;">
-    <div>
-      <h1>Effects</h1>
-    </div>
-  </section>
+  <div class="everything_container mt-5 container-fluid row flex-column-reverse mx-auto flex-md-row" id="everything-container">
+    <section class="container col-12 col-lg-4 text-center" style="border: 5px dashed green;">
+      <div>
+        <h1>Passive Income</h1>
+      </div>
+    </section>
 
-  <section class="container-fluid col-12 col-lg-4 align-items-center" style="border: 5px solid;">
-    <div class="container" id="game-container">
-      <div id="multiplier">Multiplier: x1</div>
-      <button id="clicker" class="plantLvl1"></button>
-      <div id="score">0</div>
-      <button class="btn btn-success" id="upgrade1" onclick="buyUpgrade1()">Quality Soil - Cost: 50</button>
-      <button class="btn btn-info" id="upgrade2" onclick="buyUpgrade2()">Enhanced Water - Cost: 200</button>
-      <button class="btn btn-secondary" id="upgrade3" onclick="buyUpgrade3()">Gardening Tools - Cost: 500</button>
-      <button class="btn btn-warning" id="lvl_up" onclick="lvl_up()">LVL UP</button>
-    </div>
-    <script src="upgrades.js"></script>
-    <script src="plant.js"></script>
-  </section>
+    <section class="container-fluid col-12 col-lg-4 align-items-center" id="game-section" style="border: 5px solid;">
+      <div class="container mt-3" id="game-container">
+        <div id="multiplier">Multiplier: x1</div>
+        <button id="clicker" class="plantLvl1"></button>
+        <div class="pb-3" id="score">0</div>
+      </div>
+      <script src="upgrades.js"></script>
+      <script src="plant.js"></script>
+    </section>
 
-  <section class="container col-12 col-lg-4 text-center" style="border: 5px dashed green;">
-    <div>
-      <h1>Store</h1>
-    </div>
-  </section>
+    <section class="container col-12 col-lg-4 text-center" style="border: 5px dashed green;">
+      <div>
+        <h1>Clicker Store</h1>
+        <button class="btn btn-success" id="upgrade1" onclick="buyUpgrade1()">Quality Soil - Cost: 50</button><br>
+        <button class="btn btn-info" id="upgrade2" onclick="buyUpgrade2()">Enhanced Water - Cost: 200</button><br>
+        <button class="btn btn-secondary" id="upgrade3" onclick="buyUpgrade3()">Gardening Tools - Cost: 500</button><br>
+        <button class="btn btn-warning" id="lvl_up" onclick="lvl_up()">LVL UP</button><br>
+      </div>
+    </section>
   </div>
 </body>
 </html>
