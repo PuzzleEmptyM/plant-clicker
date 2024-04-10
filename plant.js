@@ -29,7 +29,7 @@ function formatNumber(number) {
   } else if (number >= 1000000) {
     return (number / 1000000).toFixed(1) + 'M';
   } else {
-    return number.toLocaleString();
+    return Math.trunc(number).toLocaleString();
   }
 }
 
@@ -51,6 +51,11 @@ function updateScoreDisplay() {
 
 function updateMultiplierDisplay() {
   document.getElementById('multiplier').innerText = `Clicker Multiplier: x${formatNumber(multiplier)}`;
+}
+
+function updatePassiveCPS() {
+  var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3;
+  document.getElementById('passive').innerText = `Passive CPS: ${formatNumber(currentCPS * 2)}`;
 }
 
 function updateUpgradeCosts() {
@@ -181,7 +186,7 @@ function buyUpgrade1() {
   if (score >= upgrade1Cost) {
     score -= upgrade1Cost;
     multiplier += 1;
-    upgrade1Cost *= 1.25; // Increase the cost for the next purchase
+    upgrade1Cost *= 1.3; // Increase the cost for the next purchase
     setCookie('multiplier', multiplier, 7); // Save updated multiplier
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -231,6 +236,7 @@ function buyPassive1() {
 
     updateScoreDisplay();
     updateUpgradeCosts();
+    updatePassiveCPS();
     setCookie('passiveIncomeRate1', passiveIncomeRate1, 7);
     setCookie('passive1Cost', passive1Cost, 7); // Save updated cost
   }
@@ -244,6 +250,7 @@ function buyPassive2() {
 
     updateScoreDisplay();
     updateUpgradeCosts();
+    updatePassiveCPS();
     setCookie('passiveIncomeRate2', passiveIncomeRate2, 7);
     setCookie('passive2Cost', passive2Cost, 7);
   }
@@ -257,6 +264,7 @@ function buyPassive3() {
 
     updateScoreDisplay();
     updateUpgradeCosts();
+    updatePassiveCPS();
     setCookie('passiveIncomeRate3', passiveIncomeRate3, 7);
     setCookie('passive3Cost', passive3Cost, 7);
   }
@@ -266,6 +274,7 @@ function buyPassive3() {
 function applyPassiveIncome() {
   score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3;
   updateScoreDisplay();
+  updatePassiveCPS();
 }
 
 // Call this function every second to apply passive income

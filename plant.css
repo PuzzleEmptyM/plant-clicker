@@ -27,6 +27,8 @@
 }
 
 #clicker {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   border: none;
   width: 300px; /* Adjust based on your image's aspect ratio */
   height: 300px; /* Adjust based on your image's aspect ratio */
@@ -83,4 +85,76 @@
   width: 300px; /* Adjust based on your image's aspect ratio */
   height: 300px; /* Adjust based on your image's aspect ratio */
   cursor: pointer;
+}
+
+/* Store Styling! */
+
+#clickerStore {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#clickerStore h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 70px;
+  color: white;
+}
+
+#passiveStore {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#passiveStore h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 70px;
+  color: white;
+}
+
+#multiplier {
+  font-family: "Bungee Spice", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#passive {
+  font-family: "Bungee Spice", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-stroke: 3px white;
+}
+
+#score {
+  font-family: "Bungee Spice", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Background for game section */
+
+#game-section {
+  background: url('images/pixel_garden.jpg')  center;
+}
+
+#passiveStore {
+  background: url('images/storeShelf.png') center;
+}
+
+#clickerStore {
+  background: url('images/storeShelf.png') center;
 }
