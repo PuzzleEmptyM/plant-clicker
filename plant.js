@@ -3,12 +3,19 @@ let multiplier = 1; // Initialize to 1 to ensure the game starts correctly
 
 // Upgrade costs
 
-const passive1Cost = 500;
-const passive2Cost = 1000;
-const passive3Cost = 15000;
+// Variables that hold passive upgrade costs
+let passive1Cost = 500;
+let passive2Cost = 1000;
+let passive3Cost = 15000;
+// Variables to hold the income rates for passive upgrades
+let passiveIncomeRate1 = 0;
+let passiveIncomeRate2 = 0;
+let passiveIncomeRate3 = 0;
+// variables that hold clicker upgrade costs
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
 let upgrade3Cost = 500;
+// variable that holds plant lvl cost
 let lvlUpCost = 10000;
 
 // Function to format numbers
@@ -26,6 +33,18 @@ function formatNumber(number) {
   }
 }
 
+// function that checks if page refresh has occured and calls functions
+
+window.addEventListener('load', function() {
+  // Check if the page was refreshed
+  if (performance.getEntriesByType("navigation")[0].type === "reload") {
+      // Page was refreshed, call your functions here
+      applyPassiveIncome();
+      setInterval(applyPassiveIncome, 1000);
+      // Call any other necessary functions
+  }
+});
+
 function updateScoreDisplay() {
   document.getElementById('score').innerText = formatNumber(score);
 }
@@ -39,6 +58,10 @@ function updateUpgradeCosts() {
   document.getElementById('upgrade2').innerText = `Enhanced Water (+2 multiplier) - Cost: ${formatNumber(upgrade2Cost)}`;
   document.getElementById('upgrade3').innerText = `Gardening Tools (+3 multiplier) - Cost: ${formatNumber(upgrade3Cost)}`;
   document.getElementById('lvl_up').innerText = `LVL UP! - Cost: ${formatNumber(lvlUpCost)}`;
+  // Passive Income <->
+  document.getElementById('passive1').innerText = `Better Sunlight - Cost: ${formatNumber(passive1Cost)}`;
+  document.getElementById('passive2').innerText = `Temperature Control - Cost: ${formatNumber(passive2Cost)}`;
+  document.getElementById('passive3').innerText = `Humidity Control - Cost: ${formatNumber(passive3Cost)}`;
 }
 
 function getCookie(name) {
@@ -93,7 +116,7 @@ window.addEventListener('load', function() {
   }
 
   setInterval(function() {
-    document.title = "Plant Clicker - Score: " + score;
+    document.title = "Plant Clicker - Score: " + formatNumber(score);
   }, 1000)
 
   updateScoreDisplay();
@@ -116,7 +139,7 @@ document.getElementById('clicker').addEventListener('click', function() {
   }, 100); // Match the duration of the bounceWobble animation
 });
 
-
+// RESET LISTENER
 document.getElementById('reset').addEventListener('click', function() {
   score = 0;
   multiplier = 1;
@@ -124,11 +147,18 @@ document.getElementById('reset').addEventListener('click', function() {
   upgrade2Cost = 200;
   upgrade3Cost = 500;
   lvlUpCost = 10000;
+  passive1Cost = 500;
+  passive2Cost = 1000;
+  passive3Cost = 15000;
+  passiveIncomeRate1 = 0;
+  passiveIncomeRate2 = 0;
+  passiveIncomeRate3 = 0;
   
   // Update displays
   updateScoreDisplay();
   updateMultiplierDisplay();
   updateUpgradeCosts();
+  applyPassiveIncome();
 
   // Reset and save the state to cookies
   deleteCookie('score');
@@ -137,6 +167,12 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('upgrade2Cost', upgrade2Cost, 7);
   setCookie('upgrade3Cost', upgrade3Cost, 7);
   setCookie('lvlUpCost', lvlUpCost, 7);
+  setCookie('passive1Cost', passive1Cost, 7);
+  setCookie('passive2Cost', passive2Cost, 7);
+  setCookie('passive3Cost', passive3Cost, 7);
+  setCookie('passiveIncomeRate1', passiveIncomeRate1, 7);
+  setCookie('passiveIncomeRate2', passiveIncomeRate2, 7);
+  setCookie('passiveIncomeRate3', passiveIncomeRate3, 7);
 });
 
 
@@ -145,7 +181,7 @@ function buyUpgrade1() {
   if (score >= upgrade1Cost) {
     score -= upgrade1Cost;
     multiplier += 1;
-    upgrade1Cost *= 2; // Increase the cost for the next purchase
+    upgrade1Cost *= 1.25; // Increase the cost for the next purchase
     setCookie('multiplier', multiplier, 7); // Save updated multiplier
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -158,7 +194,7 @@ function buyUpgrade2() {
   if (score >= upgrade2Cost) {
     score -= upgrade2Cost;
     multiplier += 2;
-    upgrade2Cost *= 2;
+    upgrade2Cost *= 1.5;
     setCookie('multiplier', multiplier, 7);
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -186,10 +222,6 @@ function buyUpgrade3() {
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
-// Variables to hold the income rates for passive upgrades
-let passiveIncomeRate1 = 0;
-let passiveIncomeRate2 = 0;
-let passiveIncomeRate3 = 0;
 
 function buyPassive1() {
   if (score >= passive1Cost) {
@@ -199,6 +231,7 @@ function buyPassive1() {
 
     updateScoreDisplay();
     updateUpgradeCosts();
+    setCookie('passiveIncomeRate1', passiveIncomeRate1, 7);
     setCookie('passive1Cost', passive1Cost, 7); // Save updated cost
   }
 }
@@ -211,6 +244,7 @@ function buyPassive2() {
 
     updateScoreDisplay();
     updateUpgradeCosts();
+    setCookie('passiveIncomeRate2', passiveIncomeRate2, 7);
     setCookie('passive2Cost', passive2Cost, 7);
   }
 }
@@ -223,6 +257,7 @@ function buyPassive3() {
 
     updateScoreDisplay();
     updateUpgradeCosts();
+    setCookie('passiveIncomeRate3', passiveIncomeRate3, 7);
     setCookie('passive3Cost', passive3Cost, 7);
   }
 }
@@ -234,7 +269,7 @@ function applyPassiveIncome() {
 }
 
 // Call this function every second to apply passive income
-setInterval(applyPassiveIncome, 10);
+setInterval(applyPassiveIncome, 1000);
 
 // Ensure to add the new functions to the load event listener to load saved costs
 window.addEventListener('load', function() {
@@ -259,14 +294,6 @@ window.addEventListener('load', function() {
   updateUpgradeCosts();
 });
 
-function updateUpgradeCosts() {
-  // Existing update code...
-
-  // Update passive upgrade costs
-  document.getElementById('passive1').innerText = `Better Sunlight - Cost: ${passive1Cost}`;
-  document.getElementById('passive2').innerText = `Temperature Control - Cost: ${passive2Cost}`;
-  document.getElementById('passive3').innerText = `Humidity Control - Cost: ${passive3Cost}`;
-}
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
