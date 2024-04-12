@@ -91,6 +91,14 @@ function deleteCookie(name) {
 
 // Load game state from cookies or initialize to defaults
 window.addEventListener('load', function() {
+
+  let savedFlag = getCookie('flag');
+  console.log('Loaded flag from cookie:', savedFlag);
+  if (savedFlag) {
+    flag = parseInt(savedFlag, 10);
+    updateImageBasedOnFlag(flag);  // Ensure image updates on load
+  }
+
   let savedScore = getCookie('score');
   if (savedScore) {
     score = parseInt(savedScore, 10);
@@ -338,10 +346,11 @@ function lvl_up() {
     lvlUpCost *= 10;
     multiplier *=10;
     setCookie('multiplier', multiplier, 7);
+    setCookie('lvlUpCost', lvlUpCost, 7);
+    setCookie('flag', flag, 7);
     updateScoreDisplay();
     updateUpgradeCosts();
     updateMultiplierDisplay();
-    setCookie('lvlUpCost', lvlUpCost, 7);
   }
   if (flag === 2) {
     plantImg.classList.replace('plantLvl1','plantLvl2');
@@ -353,6 +362,13 @@ function lvl_up() {
   if (flag === 4) {
     // reset and go to next biome
   }
+}
+
+function updateImageBasedOnFlag(flag) {
+  var plantImg = document.getElementById('clicker');
+  plantImg.className = '';  // Clear existing classes
+  plantImg.classList.add('plantLvl' + flag); // Assuming class names like plantLvl1, plantLvl2, etc.
+  console.log('Image class set to:', plantImg.className);
 }
 
 function showPowerUp() {
