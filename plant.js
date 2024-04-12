@@ -158,6 +158,11 @@ document.getElementById('reset').addEventListener('click', function() {
   passiveIncomeRate1 = 0;
   passiveIncomeRate2 = 0;
   passiveIncomeRate3 = 0;
+  flag = 1;
+
+  var plantImg = document.getElementById('clicker');
+  plantImg.classList.remove('plantLvl2', 'plantLvl3');
+  plantImg.classList.add('plantLvl1');
   
   // Update displays
   updateScoreDisplay();
@@ -167,6 +172,17 @@ document.getElementById('reset').addEventListener('click', function() {
 
   // Reset and save the state to cookies
   deleteCookie('score');
+  deleteCookie('multiplier');
+  deleteCookie('upgrade1Cost');
+  deleteCookie('upgrade2Cost');
+  deleteCookie('upgrade3Cost');
+  deleteCookie('lvlUpCost');
+  deleteCookie('passive1Cost');
+  deleteCookie('passive2Cost');
+  deleteCookie('passive3Cost');
+  deleteCookie('passiveIncomeRate1');
+  deleteCookie('passiveIncomeRate2');
+  deleteCookie('passiveIncomeRate3');
   setCookie('multiplier', multiplier, 7);
   setCookie('upgrade1Cost', upgrade1Cost, 7);
   setCookie('upgrade2Cost', upgrade2Cost, 7);
@@ -178,6 +194,7 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('passiveIncomeRate1', passiveIncomeRate1, 7);
   setCookie('passiveIncomeRate2', passiveIncomeRate2, 7);
   setCookie('passiveIncomeRate3', passiveIncomeRate3, 7);
+  setCookie('flag', flag, 7);
 });
 
 
