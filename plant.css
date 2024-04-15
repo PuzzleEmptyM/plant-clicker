@@ -24,8 +24,7 @@ body {
 }
 
 .everything_container {
-  min-height: 50rem;
-
+  height: 100%;
 }
 
 #score {
