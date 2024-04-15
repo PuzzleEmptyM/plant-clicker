@@ -1,3 +1,5 @@
+![dummy](https://github.com/PuzzleEmptyM/plant-clicker/assets/129412985/18527a99-c065-48d0-884e-3ecaa515a2a7)
+
 # PLANT CLICKER
 ## A Journey Through a Garden of Dreams
 
