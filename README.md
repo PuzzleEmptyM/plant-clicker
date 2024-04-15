@@ -1,5 +1,5 @@
 ![dummy](https://github.com/PuzzleEmptyM/plant-clicker/assets/129412985/18527a99-c065-48d0-884e-3ecaa515a2a7)
-## A Journey Through a Garden of Dreams
+### *A Journey Through a Garden of Dreams*
 
 ### Description
 **Plant Clicker** is an engaging clicker game where players cultivate a virtual garden, using strategic upgrades to enhance plant growth and explore the botanical world. The game blends simple click mechanics with complex strategy elements, allowing players to experience the joys of gardening and plant evolution.
