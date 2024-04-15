@@ -21,6 +21,19 @@ body {
 
 #game-container {
   text-align: center;
+  padding-top: 5rem; 
+}
+
+@media screen and (max-width: 1300px) {
+  #game-container {
+    padding-top: 11rem !important; 
+  }
+}
+
+@media screen and (max-width: 990px) {
+  #game-container {
+    padding-top: 1rem !important; 
+  }
 }
 
 .everything_container {
@@ -151,6 +164,12 @@ body {
   font-style: normal;
 }
 
+#purchases {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Background for game section */
 
 #game-section {
@@ -165,4 +184,3 @@ body {
   background: url('images/storeShelf.png') center;
 }
 
-/* Navbar */
