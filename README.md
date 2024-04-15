@@ -26,7 +26,8 @@
 **Timeline**:
 - **April 1, 2024**: Conceptualization and initial sketches.
 - **April 3, 2024**: First playable prototype.
-- **April 2024**: Introduction of advanced features and testing.
+- **April 9, 2024**: Introduction of advanced features and testing.
+- **April 15, 2024**: Nearly finished website, created ReadMe.
 
 **Prototypes and Planning**:
 
