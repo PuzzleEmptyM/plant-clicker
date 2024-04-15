@@ -24,9 +24,9 @@
 
 ### Development
 **Timeline**:
-- **April 2024**: Conceptualization and initial sketches.
-- **May 2024**: First playable prototype.
-- **June 2024**: Introduction of advanced features and testing.
+- **April 1, 2024**: Conceptualization and initial sketches.
+- **April 3, 2024**: First playable prototype.
+- **April 2024**: Introduction of advanced features and testing.
 
 **Prototypes and Planning**:
 
