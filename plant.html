@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
 </head>
 <body class="body">
   <header class="header"> 
@@ -51,23 +52,23 @@
     <section class="container col-12 col-lg-4 text-center" id="passiveStore" style="border: 3px solid white;">
       <div id="passiveStore">
         <h1>Passive Income</h1>
-        <button class="btn btn-success" id="passive1" onclick="buyPassive1()">Better Sunlight - Cost: 500</button><br>
-        <button class="btn btn-info" id="passive2" onclick="buyPassive2()">Temperature Control - Cost: 1000</button><br>
-        <button class="btn btn-secondary" id="passive3" onclick="buyPassive3()">Humidity Control - Cost: 15000</button><br>
-        <button class="btn btn-secondary" id="passive4" onclick="buyPassive4()"> </button><br>
-        <button class="btn btn-secondary" id="passive5" onclick="buyPassive5()"> </button><br>
-        <button class="btn btn-secondary" id="passive6" onclick="buyPassive6()"> </button><br>
-        <button class="btn btn-secondary" id="passive7" onclick="buyPassive7()"> </button><br>
-        <button class="btn btn-secondary" id="passive8" onclick="buyPassive8()"> </button><br>
-        <button class="btn btn-secondary" id="passive9" onclick="buyPassive9()"> </button><br>
-        <button class="btn btn-secondary" id="passive10" onclick="buyPassive10()"> </button><br>
-        <button class="btn btn-secondary" id="passive11" onclick="buyPassive11()"> </button><br>
-        <button class="btn btn-secondary" id="passive12" onclick="buyPassive12()"> </button><br>
+        <div class="mt-4" id="purchases">
+        <button class="btn" id="passive1" onclick="buyPassive1()" style="border: 2px solid white; font-size: 25px; background-color: red;">Better Sunlight - Cost: 500</button><br>
+        <button class="btn btn-info" id="passive2" onclick="buyPassive2()" style="border: 2px solid white; font-size: 25px; background-color: #FF4300;">Temperature Control - Cost: 1000</button><br>
+        <button class="btn btn-secondary" id="passive3" onclick="buyPassive3()" style="border: 2px solid white; font-size: 25px; background-color: orange;">Humidity Control - Cost: 15000</button><br>
+        <button class="btn btn-secondary" id="passive4" onclick="buyPassive4()" style="border: 2px solid white; font-size: 25px; background-color: #8f8d0e;"> </button><br>
+        <button class="btn btn-secondary" id="passive5" onclick="buyPassive5()" style="border: 2px solid white; font-size: 25px; background-color: rgb(164, 200, 5);"> </button><br>
+        <button class="btn btn-secondary" id="passive6" onclick="buyPassive6()" style="border: 2px solid white; font-size: 25px; background-color: green;"> </button><br>
+        <button class="btn btn-secondary" id="passive7" onclick="buyPassive7()" style="border: 2px solid white; font-size: 25px; background-color: rgb(6, 150, 133);"> </button><br>
+        <button class="btn btn-secondary" id="passive8" onclick="buyPassive8()" style="border: 2px solid white; font-size: 25px; background-color: blue;"> </button><br>
+        <button class="btn btn-secondary" id="passive9" onclick="buyPassive9()" style="border: 2px solid white; font-size: 25px; background-color: #2e0e8f;"> </button><br>
+        <button class="btn btn-secondary" id="passive10" onclick="buyPassive10()" style="border: 2px solid white; font-size: 25px; background-color: purple;"> </button><br>
+      </div>
       </div>
     </section>
 
     <section class="container-fluid col-12 col-lg-4 align-items-center" id="game-section" style="border: 3px solid white;">
-      <div class="container" id="game-container" style="margin-top: 7rem; height: 40rem;">
+      <div class="container" id="game-container">
         <div id="multiplier">Multiplier: x1</div>
         <div id="passive">Passive CPS: 1</div>
         <button id="clicker" class="plantLvl1"></button>
@@ -79,10 +80,12 @@
     <section class="container col-12 col-lg-4 text-center" id="clickerStore" style="border: 3px solid white;">
       <div id="clickerStore">
         <h1>Clicker Store</h1>
-        <button class="btn btn-success" id="upgrade1" onclick="buyUpgrade1()">Quality Soil - Cost: 50</button><br>
-        <button class="btn btn-info" id="upgrade2" onclick="buyUpgrade2()">Enhanced Water - Cost: 200</button><br>
-        <button class="btn btn-secondary" id="upgrade3" onclick="buyUpgrade3()">Gardening Tools - Cost: 500</button><br>
-        <button class="btn btn-warning" id="lvl_up" onclick="lvl_up()">LVL UP - Cost: 10000</button><br>
+        <div class="mt-4" id="purchases">
+        <button class="btn btn-success" id="upgrade1" onclick="buyUpgrade1()" style="border: 2px solid white; font-size: 25px;">Quality Soil - Cost: 50</button><br>
+        <button class="btn btn-info" id="upgrade2" onclick="buyUpgrade2()" style="border: 2px solid white; font-size: 25px;">Enhanced Water - Cost: 200</button><br>
+        <button class="btn btn-secondary" id="upgrade3" onclick="buyUpgrade3()" style="border: 2px solid white; font-size: 25px;">Gardening Tools - Cost: 500</button><br>
+        <button class="btn btn-warning" id="lvl_up" onclick="lvl_up()" style="border: 2px solid white; font-size: 25px;">LVL UP - Cost: 10000</button><br>
+        </div>
       </div>
     </section>
   </div>
