@@ -1,25 +1,45 @@
 # PLANT CLICKER
-## A journey through a garden of dreams
+## A Journey Through a Garden of Dreams
 
 ### Description
-Describe the main mechanics and narrative of the game
+**Plant Clicker** is an engaging clicker game where players cultivate a virtual garden, using strategic upgrades to enhance plant growth and explore the botanical world. The game blends simple click mechanics with complex strategy elements, allowing players to experience the joys of gardening and plant evolution.
 
+- **Core Mechanics**: Click to earn resources, which you can spend on various upgrades that automate tasks or increase your earnings.
+- **Narrative**: Follow the life cycle of a mysterious plant species, discovering new plant varieties and learning about their unique habitats and needs.
 
 ### Game Guide
-Give a basic crash course on how to play the game, its strategies, and any multipliers or power-ups.
+**Getting Started**: Click on the main plant image to collect leaves, the primary currency. Use these leaves to purchase your first upgrades.
 
+**Upgrades**:
+- **Passive Upgrades**: Increase resource generation without clicking.
+- **Active Upgrades**: Enhance your clicking power and unlock new abilities.
+
+**Strategies**:
+- Invest in passive income early to maximize your idle benefits.
+- Balance your upgrades to achieve optimal growth rates.
+
+**Power-Ups**:
+- **Sun Boost**: Temporarily increases the photosynthesis rate, speeding up production.
+- **Rain Dance**: A rare boost that multiplies water supply, drastically increasing growth for a short period.
 
 ### Development
-give a basic timeline of development, including screenshots of old prototypes, and pictures of whiteboards.
+**Timeline**:
+- **April 2024**: Conceptualization and initial sketches.
+- **May 2024**: First playable prototype.
+- **June 2024**: Introduction of advanced features and testing.
 
+**Prototypes and Planning**:
 
-### Tools and Libraries used
-CSS
-HTML
-Javascript
-Bootstrap 5
+*Images and screenshots of prototypes and whiteboarding.*
 
+### Tools and Libraries Used
+- **CSS**: For styling the game interface.
+- **HTML**: Structure the web elements of the game.
+- **JavaScript**: Add interactivity and manage game logic.
+- **Bootstrap 5**: Responsive design framework to ensure the game looks good on all devices.
+- **Git**: Essential for version control, managing code changes, and collaborating with others.
+- **Visual Studio Code**: Used for creating, editing, and sharing files; taking advantage of the built-in Git integration.
 
-
+---
 
 Created April 2024 by Puzzle Moser and Eric Dzyk
