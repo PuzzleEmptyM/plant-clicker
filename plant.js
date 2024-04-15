@@ -1,8 +1,6 @@
 let score = 0;
 let multiplier = 1; // Initialize to 1 to ensure the game starts correctly
 
-// Upgrade costs
-
 // Variables that hold passive upgrade costs
 let passive1Cost = 500;
 let passive2Cost = 1000;
@@ -108,6 +106,21 @@ window.addEventListener('load', function() {
   if (savedMultiplier) {
     multiplier = parseInt(savedMultiplier, 10);
   }
+
+  let savedPassiveIncomeRate1 = getCookie('passiveIncomeRate1');
+    if (savedPassiveIncomeRate1) {
+        passiveIncomeRate1 = parseInt(savedPassiveIncomeRate1, 10);
+    }
+  
+  let savedPassiveIncomeRate2 = getCookie('passiveIncomeRate2');
+  if (savedPassiveIncomeRate2) {
+      passiveIncomeRate2 = parseInt(savedPassiveIncomeRate2, 10);
+  }
+
+  let savedPassiveIncomeRate3 = getCookie('passiveIncomeRate3');
+    if (savedPassiveIncomeRate3) {
+        passiveIncomeRate3 = parseInt(savedPassiveIncomeRate3, 10);
+    }
   
   // Load saved upgrade costs
   let savedUpgrade1Cost = getCookie('upgrade1Cost');
@@ -414,4 +427,3 @@ function showPowerUp() {
 setInterval(showPowerUp, 10000);
 
 // script that updates title constantly
-
