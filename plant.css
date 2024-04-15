@@ -15,10 +15,17 @@
   }
 }
 
-
+body {
+  background: url('images/cobblestone.png');
+}
 
 #game-container {
   text-align: center;
+}
+
+.everything_container {
+  min-height: 50rem;
+
 }
 
 #score {
@@ -158,3 +165,5 @@
 #clickerStore {
   background: url('images/storeShelf.png') center;
 }
+
+/* Navbar */
