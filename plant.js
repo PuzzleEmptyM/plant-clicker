@@ -5,10 +5,28 @@ let multiplier = 1; // Initialize to 1 to ensure the game starts correctly
 let passive1Cost = 500;
 let passive2Cost = 1000;
 let passive3Cost = 15000;
+let passive4Cost = 50000;
+let passive5Cost = 100000;
+let passive6Cost = 250000;
+let passive7Cost = 1000000;
+let passive8Cost = 15000000;
+let passive9Cost = 50000000;
+let passive10Cost = 100000000;
+let passive11Cost = 150000000;
+let passive12Cost = 500000000;
 // Variables to hold the income rates for passive upgrades
 let passiveIncomeRate1 = 0;
 let passiveIncomeRate2 = 0;
 let passiveIncomeRate3 = 0;
+let passiveIncomeRate4 = 0;
+let passiveIncomeRate5 = 0;
+let passiveIncomeRate6 = 0;
+let passiveIncomeRate7 = 0;
+let passiveIncomeRate8 = 0;
+let passiveIncomeRate9 = 0;
+let passiveIncomeRate10 = 0;
+let passiveIncomeRate11 = 0;
+let passiveIncomeRate12 = 0;
 // variables that hold clicker upgrade costs
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
@@ -52,7 +70,7 @@ function updateMultiplierDisplay() {
 }
 
 function updatePassiveCPS() {
-  var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3;
+  var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 +passiveIncomeRate9 + passiveIncomeRate10 + passiveIncomeRate11 + passiveIncomeRate12;
   document.getElementById('passive').innerText = `Passive CPS: ${formatNumber(currentCPS * 2)}`;
 }
 
@@ -65,6 +83,15 @@ function updateUpgradeCosts() {
   document.getElementById('passive1').innerText = `Better Sunlight - Cost: ${formatNumber(passive1Cost)}`;
   document.getElementById('passive2').innerText = `Temperature Control - Cost: ${formatNumber(passive2Cost)}`;
   document.getElementById('passive3').innerText = `Humidity Control - Cost: ${formatNumber(passive3Cost)}`;
+  document.getElementById('passive4').innerText = `Irrigation System - Cost: ${formatNumber(passive4Cost)}`;
+  document.getElementById('passive5').innerText = `UV Lamp - Cost: ${formatNumber(passive5Cost)}`;
+  document.getElementById('passive6').innerText = `Photosynthesis Plus - Cost: ${formatNumber(passive6Cost)}`;
+  document.getElementById('passive7').innerText = `Bee Pheromones - Cost: ${formatNumber(passive7Cost)}`;
+  document.getElementById('passive8').innerText = `Greenhouse - Cost: ${formatNumber(passive8Cost)}`;
+  document.getElementById('passive9').innerText = `Clearer Windows - Cost: ${formatNumber(passive9Cost)}`;
+  document.getElementById('passive10').innerText = ` - Cost: ${formatNumber(passive10Cost)}`;
+  document.getElementById('passive11').innerText = ` - Cost: ${formatNumber(passive11Cost)}`;
+  document.getElementById('passive12').innerText = ` - Cost: ${formatNumber(passive12Cost)}`;
 }
 
 function getCookie(name) {
@@ -110,7 +137,7 @@ window.addEventListener('load', function() {
   let savedPassiveIncomeRate1 = getCookie('passiveIncomeRate1');
     if (savedPassiveIncomeRate1) {
         passiveIncomeRate1 = parseInt(savedPassiveIncomeRate1, 10);
-    }
+  }
   
   let savedPassiveIncomeRate2 = getCookie('passiveIncomeRate2');
   if (savedPassiveIncomeRate2) {
@@ -118,10 +145,55 @@ window.addEventListener('load', function() {
   }
 
   let savedPassiveIncomeRate3 = getCookie('passiveIncomeRate3');
-    if (savedPassiveIncomeRate3) {
-        passiveIncomeRate3 = parseInt(savedPassiveIncomeRate3, 10);
-    }
+  if (savedPassiveIncomeRate3) {
+      passiveIncomeRate3 = parseInt(savedPassiveIncomeRate3, 10);
+}
+
+  let savedPassiveIncomeRate4 = getCookie('passiveIncomeRate4');
+    if (savedPassiveIncomeRate4) {
+        passiveIncomeRate4 = parseInt(savedPassiveIncomeRate4, 10);
+  }
   
+  let savedPassiveIncomeRate5 = getCookie('passiveIncomeRate5');
+  if (savedPassiveIncomeRate5) {
+      passiveIncomeRate5 = parseInt(savedPassiveIncomeRate5, 10);
+  }
+
+  let savedPassiveIncomeRate6 = getCookie('passiveIncomeRate6');
+  if (savedPassiveIncomeRate6) {
+      passiveIncomeRate6 = parseInt(savedPassiveIncomeRate6, 10);
+  }
+
+  let savedPassiveIncomeRate7 = getCookie('passiveIncomeRate7');
+  if (savedPassiveIncomeRate7) {
+      passiveIncomeRate7 = parseInt(savedPassiveIncomeRate7, 10);
+  }
+
+  let savedPassiveIncomeRate8 = getCookie('passiveIncomeRate8');
+  if (savedPassiveIncomeRate8) {
+      passiveIncomeRate8 = parseInt(savedPassiveIncomeRate8, 10);
+  }
+
+  let savedPassiveIncomeRate9 = getCookie('passiveIncomeRate9');
+  if (savedPassiveIncomeRate9) {
+      passiveIncomeRate9 = parseInt(savedPassiveIncomeRate9, 10);
+  }
+
+  let savedPassiveIncomeRate10 = getCookie('passiveIncomeRate10');
+  if (savedPassiveIncomeRate10) {
+      passiveIncomeRate10 = parseInt(savedPassiveIncomeRate10, 10);
+  }
+
+  let savedPassiveIncomeRate11 = getCookie('passiveIncomeRate11');
+  if (savedPassiveIncomeRate11) {
+      passiveIncomeRate11 = parseInt(savedPassiveIncomeRate11, 10);
+  }
+
+  let savedPassiveIncomeRate12 = getCookie('passiveIncomeRate12');
+  if (savedPassiveIncomeRate12) {
+      passiveIncomeRate12 = parseInt(savedPassiveIncomeRate12, 10);
+  }
+
   // Load saved upgrade costs
   let savedUpgrade1Cost = getCookie('upgrade1Cost');
   if (savedUpgrade1Cost) {
@@ -176,9 +248,27 @@ document.getElementById('reset').addEventListener('click', function() {
   passive1Cost = 500;
   passive2Cost = 1000;
   passive3Cost = 15000;
+  passive4Cost = 50000;
+  passive5Cost = 100000;
+  passive6Cost = 250000;
+  passive7Cost = 1000000;
+  passive8Cost = 15000000;
+  passive9Cost = 50000000;
+  passive10Cost = 100000000;
+  passive11Cost = 150000000;
+  passive12Cost = 500000000;
   passiveIncomeRate1 = 0;
   passiveIncomeRate2 = 0;
   passiveIncomeRate3 = 0;
+  passiveIncomeRate4 = 0;
+  passiveIncomeRate5 = 0;
+  passiveIncomeRate6 = 0;
+  passiveIncomeRate7 = 0;
+  passiveIncomeRate8 = 0;
+  passiveIncomeRate9 = 0;
+  passiveIncomeRate10 = 0;
+  passiveIncomeRate11 = 0;
+  passiveIncomeRate12 = 0;
   flag = 1;
 
   var plantImg = document.getElementById('clicker');
@@ -201,9 +291,27 @@ document.getElementById('reset').addEventListener('click', function() {
   deleteCookie('passive1Cost');
   deleteCookie('passive2Cost');
   deleteCookie('passive3Cost');
+  deleteCookie('passive4Cost');
+  deleteCookie('passive5Cost');
+  deleteCookie('passive6Cost');
+  deleteCookie('passive7Cost');
+  deleteCookie('passive8Cost');
+  deleteCookie('passive9Cost');
+  deleteCookie('passive10Cost');
+  deleteCookie('passive11Cost');
+  deleteCookie('passive12Cost');
   deleteCookie('passiveIncomeRate1');
   deleteCookie('passiveIncomeRate2');
   deleteCookie('passiveIncomeRate3');
+  deleteCookie('passiveIncomeRate4');
+  deleteCookie('passiveIncomeRate5');
+  deleteCookie('passiveIncomeRate6');
+  deleteCookie('passiveIncomeRate7');
+  deleteCookie('passiveIncomeRate8');
+  deleteCookie('passiveIncomeRate9');
+  deleteCookie('passiveIncomeRate10');
+  deleteCookie('passiveIncomeRate11');
+  deleteCookie('passiveIncomeRate12');
   setCookie('multiplier', multiplier, 7);
   setCookie('upgrade1Cost', upgrade1Cost, 7);
   setCookie('upgrade2Cost', upgrade2Cost, 7);
@@ -212,9 +320,27 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('passive1Cost', passive1Cost, 7);
   setCookie('passive2Cost', passive2Cost, 7);
   setCookie('passive3Cost', passive3Cost, 7);
+  setCookie('passive4Cost', passive4Cost, 7);
+  setCookie('passive5Cost', passive5Cost, 7);
+  setCookie('passive6Cost', passive6Cost, 7);
+  setCookie('passive7Cost', passive7Cost, 7);
+  setCookie('passive8Cost', passive8Cost, 7);
+  setCookie('passive9Cost', passive9Cost, 7);
+  setCookie('passive10Cost', passive10Cost, 7);
+  setCookie('passive11Cost', passive11Cost, 7);
+  setCookie('passive12Cost', passive12Cost, 7);
   setCookie('passiveIncomeRate1', passiveIncomeRate1, 7);
   setCookie('passiveIncomeRate2', passiveIncomeRate2, 7);
   setCookie('passiveIncomeRate3', passiveIncomeRate3, 7);
+  setCookie('passiveIncomeRate4', passiveIncomeRate4, 7);
+  setCookie('passiveIncomeRate5', passiveIncomeRate5, 7);
+  setCookie('passiveIncomeRate6', passiveIncomeRate6, 7);
+  setCookie('passiveIncomeRate7', passiveIncomeRate7, 7);
+  setCookie('passiveIncomeRate8', passiveIncomeRate8, 7);
+  setCookie('passiveIncomeRate9', passiveIncomeRate9, 7);
+  setCookie('passiveIncomeRate10', passiveIncomeRate10, 7);
+  setCookie('passiveIncomeRate11', passiveIncomeRate11, 7);
+  setCookie('passiveIncomeRate12', passiveIncomeRate12, 7);
   setCookie('flag', flag, 7);
 });
 
@@ -237,7 +363,7 @@ function buyUpgrade2() {
   if (score >= upgrade2Cost) {
     score -= upgrade2Cost;
     multiplier += 2;
-    upgrade2Cost *= 1.5;
+    upgrade2Cost *= 2;
     setCookie('multiplier', multiplier, 7);
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -250,7 +376,7 @@ function buyUpgrade3() {
   if (score >= upgrade3Cost) {
     score -= upgrade3Cost;
     multiplier += 3;
-    upgrade3Cost *= 2;
+    upgrade3Cost *= 2.5;
     setCookie('multiplier', multiplier, 7);
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -270,7 +396,7 @@ function buyPassive1() {
   if (score >= passive1Cost) {
     score -= passive1Cost;
     passiveIncomeRate1 += 1; // Increase passive income rate
-    passive1Cost *= 2; // Increase the cost for the next purchase
+    passive1Cost *= 1.2; // Increase the cost for the next purchase
 
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -283,8 +409,8 @@ function buyPassive1() {
 function buyPassive2() {
   if (score >= passive2Cost) {
     score -= passive2Cost;
-    passiveIncomeRate2 += 10; // Increase passive income rate more significantly
-    passive2Cost *= 2;
+    passiveIncomeRate2 += 15; // Increase passive income rate more significantly
+    passive2Cost *= 1.5;
 
     updateScoreDisplay();
     updateUpgradeCosts();
@@ -297,7 +423,7 @@ function buyPassive2() {
 function buyPassive3() {
   if (score >= passive3Cost) {
     score -= passive3Cost;
-    passiveIncomeRate3 += 50; // Even more significant increase
+    passiveIncomeRate3 += 60; // Even more significant increase
     passive3Cost *= 2;
 
     updateScoreDisplay();
@@ -308,9 +434,136 @@ function buyPassive3() {
   }
 }
 
+function buyPassive4() {
+  if (score >= passive4Cost) {
+    score -= passive4Cost;
+    passiveIncomeRate4 += 120; // Even more significant increase
+    passive4Cost *= 2.2;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate4', passiveIncomeRate4, 7);
+    setCookie('passive4Cost', passive4Cost, 7);
+  }
+}
+
+function buyPassive5() {
+  if (score >= passive5Cost) {
+    score -= passive5Cost;
+    passiveIncomeRate5 += 300; // Even more significant increase
+    passive5Cost *= 2.5;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate5', passiveIncomeRate5, 7);
+    setCookie('passive5Cost', passive5Cost, 7);
+  }
+}
+
+function buyPassive6() {
+  if (score >= passive6Cost) {
+    score -= passive6Cost;
+    passiveIncomeRate6 += 500; // Even more significant increase
+    passive6Cost *= 3;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate6', passiveIncomeRate6, 7);
+    setCookie('passive6Cost', passive6Cost, 7);
+  }
+}
+
+function buyPassive7() {
+  if (score >= passive7Cost) {
+    score -= passive7Cost;
+    passiveIncomeRate7 += 750; // Even more significant increase
+    passive7Cost *= 3.2;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate7', passiveIncomeRate7, 7);
+    setCookie('passive7Cost', passive7Cost, 7);
+  }
+}
+
+function buyPassive8() {
+  if (score >= passive8Cost) {
+    score -= passive8Cost;
+    passiveIncomeRate8 += 1000; // Even more significant increase
+    passive8Cost *= 3.5;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate8', passiveIncomeRate8, 7);
+    setCookie('passive8Cost', passive8Cost, 7);
+  }
+}
+
+function buyPassive9() {
+  if (score >= passive9Cost) {
+    score -= passive9Cost;
+    passiveIncomeRate9 += 1500; // Even more significant increase
+    passive9Cost *= 4;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate9', passiveIncomeRate9, 7);
+    setCookie('passive9Cost', passive9Cost, 7);
+  }
+}
+
+function buyPassive10() {
+  if (score >= passive10Cost) {
+    score -= passive10Cost;
+    passiveIncomeRate10 += 3000; // Even more significant increase
+    passive10Cost *= 4.2;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate10', passiveIncomeRate10, 7);
+    setCookie('passive10Cost', passive10Cost, 7);
+  }
+}
+
+function buyPassive11() {
+  if (score >= passive11Cost) {
+    score -= passive11Cost;
+    passiveIncomeRate11 += 75000; // Even more significant increase
+    passive11Cost *= 4.5;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate11', passiveIncomeRate11, 7);
+    setCookie('passive11Cost', passive11Cost, 7);
+  }
+}
+
+function buyPassive12() {
+  if (score >= passive12Cost) {
+    score -= passive12Cost;
+    passiveIncomeRate12 += 100000; // Even more significant increase
+    passive12Cost *= 5;
+
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updatePassiveCPS();
+    setCookie('passiveIncomeRate12', passiveIncomeRate12, 7);
+    setCookie('passive12Cost', passive12Cost, 7);
+  }
+}
+
+
 // Ensure the passive income rates are applied
 function applyPassiveIncome() {
-  score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3;
+  score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 + passiveIncomeRate9 + passiveIncomeRate10 + passiveIncomeRate11 + passiveIncomeRate12;
   updateScoreDisplay();
   updatePassiveCPS();
 }
@@ -335,6 +588,43 @@ window.addEventListener('load', function() {
   let savedPassive3Cost = getCookie('passive3Cost');
   if (savedPassive3Cost) {
     passive3Cost = parseInt(savedPassive3Cost, 10);
+  }
+
+  let savedPassive4Cost = getCookie('passive4Cost');
+  if (savedPassive4Cost) {
+    passive4Cost = parseInt(savedPassive4Cost, 10);
+  }
+  let savedPassive5Cost = getCookie('passive5Cost');
+  if (savedPassive5Cost) {
+    passive5Cost = parseInt(savedPassive5Cost, 10);
+  }
+  let savedPassive6Cost = getCookie('passive6Cost');
+  if (savedPassive6Cost) {
+    passive6Cost = parseInt(savedPassive6Cost, 10);
+  }
+  let savedPassive7Cost = getCookie('passive7Cost');
+  if (savedPassive7Cost) {
+    passive7Cost = parseInt(savedPassive7Cost, 10);
+  }
+  let savedPassive8Cost = getCookie('passive8Cost');
+  if (savedPassive8Cost) {
+    passive8Cost = parseInt(savedPassive8Cost, 10);
+  }
+  let savedPassive9Cost = getCookie('passive9Cost');
+  if (savedPassive9Cost) {
+    passive9Cost = parseInt(savedPassive9Cost, 10);
+  }
+  let savedPassive10Cost = getCookie('passive10Cost');
+  if (savedPassive10Cost) {
+    passive10Cost = parseInt(savedPassive10Cost, 10);
+  }
+  let savedPassive11Cost = getCookie('passive11Cost');
+  if (savedPassive11Cost) {
+    passive11Cost = parseInt(savedPassive11Cost, 10);
+  }
+  let savedPassive12Cost = getCookie('passive12Cost');
+  if (savedPassive12Cost) {
+    passive12Cost = parseInt(savedPassive12Cost, 10);
   }
 
   // Don't forget to update the display of costs for these new passive upgrades
