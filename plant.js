@@ -12,8 +12,6 @@ let passive7Cost = 1000000;
 let passive8Cost = 15000000;
 let passive9Cost = 50000000;
 let passive10Cost = 100000000;
-let passive11Cost = 150000000;
-let passive12Cost = 500000000;
 // Variables to hold the income rates for passive upgrades
 let passiveIncomeRate1 = 0;
 let passiveIncomeRate2 = 0;
@@ -25,8 +23,6 @@ let passiveIncomeRate7 = 0;
 let passiveIncomeRate8 = 0;
 let passiveIncomeRate9 = 0;
 let passiveIncomeRate10 = 0;
-let passiveIncomeRate11 = 0;
-let passiveIncomeRate12 = 0;
 // variables that hold clicker upgrade costs
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
@@ -70,7 +66,7 @@ function updateMultiplierDisplay() {
 }
 
 function updatePassiveCPS() {
-  var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 +passiveIncomeRate9 + passiveIncomeRate10 + passiveIncomeRate11 + passiveIncomeRate12;
+  var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 +passiveIncomeRate9 + passiveIncomeRate10;
   document.getElementById('passive').innerText = `Passive CPS: ${formatNumber(currentCPS * 2)}`;
 }
 
@@ -85,13 +81,11 @@ function updateUpgradeCosts() {
   document.getElementById('passive3').innerText = `Humidity Control - Cost: ${formatNumber(passive3Cost)}`;
   document.getElementById('passive4').innerText = `Irrigation System - Cost: ${formatNumber(passive4Cost)}`;
   document.getElementById('passive5').innerText = `UV Lamp - Cost: ${formatNumber(passive5Cost)}`;
-  document.getElementById('passive6').innerText = `Photosynthesis Plus - Cost: ${formatNumber(passive6Cost)}`;
-  document.getElementById('passive7').innerText = `Bee Pheromones - Cost: ${formatNumber(passive7Cost)}`;
-  document.getElementById('passive8').innerText = `Greenhouse - Cost: ${formatNumber(passive8Cost)}`;
-  document.getElementById('passive9').innerText = `Clearer Windows - Cost: ${formatNumber(passive9Cost)}`;
-  document.getElementById('passive10').innerText = ` - Cost: ${formatNumber(passive10Cost)}`;
-  document.getElementById('passive11').innerText = ` - Cost: ${formatNumber(passive11Cost)}`;
-  document.getElementById('passive12').innerText = ` - Cost: ${formatNumber(passive12Cost)}`;
+  document.getElementById('passive6').innerText = `Clearer Windows - Cost: ${formatNumber(passive6Cost)}`;
+  document.getElementById('passive7').innerText = `Photosynthesis Plus - Cost: ${formatNumber(passive7Cost)}`;
+  document.getElementById('passive8').innerText = `Bee Pheromones - Cost: ${formatNumber(passive8Cost)}`;
+  document.getElementById('passive9').innerText = `Greenhouse - Cost: ${formatNumber(passive9Cost)}`;
+  document.getElementById('passive10').innerText = `Carbon Converter - Cost: ${formatNumber(passive10Cost)}`;
 }
 
 function getCookie(name) {
@@ -184,16 +178,6 @@ window.addEventListener('load', function() {
       passiveIncomeRate10 = parseInt(savedPassiveIncomeRate10, 10);
   }
 
-  let savedPassiveIncomeRate11 = getCookie('passiveIncomeRate11');
-  if (savedPassiveIncomeRate11) {
-      passiveIncomeRate11 = parseInt(savedPassiveIncomeRate11, 10);
-  }
-
-  let savedPassiveIncomeRate12 = getCookie('passiveIncomeRate12');
-  if (savedPassiveIncomeRate12) {
-      passiveIncomeRate12 = parseInt(savedPassiveIncomeRate12, 10);
-  }
-
   // Load saved upgrade costs
   let savedUpgrade1Cost = getCookie('upgrade1Cost');
   if (savedUpgrade1Cost) {
@@ -255,8 +239,6 @@ document.getElementById('reset').addEventListener('click', function() {
   passive8Cost = 15000000;
   passive9Cost = 50000000;
   passive10Cost = 100000000;
-  passive11Cost = 150000000;
-  passive12Cost = 500000000;
   passiveIncomeRate1 = 0;
   passiveIncomeRate2 = 0;
   passiveIncomeRate3 = 0;
@@ -267,8 +249,6 @@ document.getElementById('reset').addEventListener('click', function() {
   passiveIncomeRate8 = 0;
   passiveIncomeRate9 = 0;
   passiveIncomeRate10 = 0;
-  passiveIncomeRate11 = 0;
-  passiveIncomeRate12 = 0;
   flag = 1;
 
   var plantImg = document.getElementById('clicker');
@@ -310,8 +290,6 @@ document.getElementById('reset').addEventListener('click', function() {
   deleteCookie('passiveIncomeRate8');
   deleteCookie('passiveIncomeRate9');
   deleteCookie('passiveIncomeRate10');
-  deleteCookie('passiveIncomeRate11');
-  deleteCookie('passiveIncomeRate12');
   setCookie('multiplier', multiplier, 7);
   setCookie('upgrade1Cost', upgrade1Cost, 7);
   setCookie('upgrade2Cost', upgrade2Cost, 7);
@@ -339,8 +317,6 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('passiveIncomeRate8', passiveIncomeRate8, 7);
   setCookie('passiveIncomeRate9', passiveIncomeRate9, 7);
   setCookie('passiveIncomeRate10', passiveIncomeRate10, 7);
-  setCookie('passiveIncomeRate11', passiveIncomeRate11, 7);
-  setCookie('passiveIncomeRate12', passiveIncomeRate12, 7);
   setCookie('flag', flag, 7);
 });
 
@@ -532,38 +508,9 @@ function buyPassive10() {
   }
 }
 
-function buyPassive11() {
-  if (score >= passive11Cost) {
-    score -= passive11Cost;
-    passiveIncomeRate11 += 75000; // Even more significant increase
-    passive11Cost *= 4.5;
-
-    updateScoreDisplay();
-    updateUpgradeCosts();
-    updatePassiveCPS();
-    setCookie('passiveIncomeRate11', passiveIncomeRate11, 7);
-    setCookie('passive11Cost', passive11Cost, 7);
-  }
-}
-
-function buyPassive12() {
-  if (score >= passive12Cost) {
-    score -= passive12Cost;
-    passiveIncomeRate12 += 100000; // Even more significant increase
-    passive12Cost *= 5;
-
-    updateScoreDisplay();
-    updateUpgradeCosts();
-    updatePassiveCPS();
-    setCookie('passiveIncomeRate12', passiveIncomeRate12, 7);
-    setCookie('passive12Cost', passive12Cost, 7);
-  }
-}
-
-
 // Ensure the passive income rates are applied
 function applyPassiveIncome() {
-  score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 + passiveIncomeRate9 + passiveIncomeRate10 + passiveIncomeRate11 + passiveIncomeRate12;
+  score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 + passiveIncomeRate9 + passiveIncomeRate10;
   updateScoreDisplay();
   updatePassiveCPS();
 }
@@ -617,14 +564,6 @@ window.addEventListener('load', function() {
   let savedPassive10Cost = getCookie('passive10Cost');
   if (savedPassive10Cost) {
     passive10Cost = parseInt(savedPassive10Cost, 10);
-  }
-  let savedPassive11Cost = getCookie('passive11Cost');
-  if (savedPassive11Cost) {
-    passive11Cost = parseInt(savedPassive11Cost, 10);
-  }
-  let savedPassive12Cost = getCookie('passive12Cost');
-  if (savedPassive12Cost) {
-    passive12Cost = parseInt(savedPassive12Cost, 10);
   }
 
   // Don't forget to update the display of costs for these new passive upgrades
