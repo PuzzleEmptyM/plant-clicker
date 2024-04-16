@@ -270,7 +270,7 @@ document.getElementById('reset').addEventListener('click', function() {
   flag = 1;
 
   var plantImg = document.getElementById('clicker');
-  plantImg.classList.remove('plantLvl2', 'plantLvl3');
+  plantImg.classList.remove('plantLvl2', 'plantLvl3', 'plantLvl4', 'plantLvl5');
   plantImg.classList.add('plantLvl1');
   
   // Update displays
