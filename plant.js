@@ -606,12 +606,15 @@ function lvl_up() {
     score -= lvlUpCost;
     lvlUpCost *= 10;
     multiplier *=10;
+    playAudio('sfx/levelUp.wav');
     setCookie('multiplier', multiplier, 7);
     setCookie('lvlUpCost', lvlUpCost, 7);
     setCookie('flag', flag, 7);
     updateScoreDisplay();
     updateUpgradeCosts();
     updateMultiplierDisplay();
+  } else {
+    playAudio('sfx/nope.wav');
   }
   if (flag === 2) {
     plantImg.classList.replace('plantLvl1','plantLvl2');
