@@ -9,7 +9,7 @@
 
 ### Game Guide
 **Getting Started**: <be>
-You can access the game here: [Plant CLicker]([https://pages.github.com/](https://puzzleemptym.github.io/plant-clicker/)) <br>
+You can access the game here: [Plant Clicker](https://puzzleemptym.github.io/plant-clicker/) <br>
 Click on the main plant image to collect leaves, the primary currency. Use these leaves to purchase your first upgrades.
 
 **Upgrades**:
