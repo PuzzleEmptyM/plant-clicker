@@ -478,7 +478,7 @@ function buyPassive5() {
   if (score >= passive5Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive5Cost;
-    passiveIncomeRate5 += 2000; // Even more significant increase
+    passiveIncomeRate5 += 5000; // Even more significant increase
     passive5Cost *= 2.5;
 
     updateScoreDisplay();
@@ -495,7 +495,7 @@ function buyPassive6() {
   if (score >= passive6Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive6Cost;
-    passiveIncomeRate6 += 5000; // Even more significant increase
+    passiveIncomeRate6 += 75000; // Even more significant increase
     passive6Cost *= 3;
 
     updateScoreDisplay();
@@ -512,7 +512,7 @@ function buyPassive7() {
   if (score >= passive7Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive7Cost;
-    passiveIncomeRate7 += 7500; // Even more significant increase
+    passiveIncomeRate7 += 250000; // Even more significant increase
     passive7Cost *= 3.2;
 
     updateScoreDisplay();
@@ -529,7 +529,7 @@ function buyPassive8() {
   if (score >= passive8Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive8Cost;
-    passiveIncomeRate8 += 10000; // Even more significant increase
+    passiveIncomeRate8 += 500000; // Even more significant increase
     passive8Cost *= 3.5;
 
     updateScoreDisplay();
@@ -546,7 +546,7 @@ function buyPassive9() {
   if (score >= passive9Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive9Cost;
-    passiveIncomeRate9 += 15000; // Even more significant increase
+    passiveIncomeRate9 += 1000000; // Even more significant increase
     passive9Cost *= 4;
 
     updateScoreDisplay();
@@ -563,7 +563,7 @@ function buyPassive10() {
   if (score >= passive10Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive10Cost;
-    passiveIncomeRate10 += 30000; // Even more significant increase
+    passiveIncomeRate10 += 10000000; // Even more significant increase
     passive10Cost *= 4.2;
 
     updateScoreDisplay();
