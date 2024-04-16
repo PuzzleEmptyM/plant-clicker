@@ -331,7 +331,9 @@ function randomClickSound() {
   const sounds = [
     'sfx/click1.mp3',
     'sfx/click2.mp3',
-    'sfx/click3.mp3'
+    'sfx/click3.mp3',
+    'sfx/click4.mp3',
+    'sfx/click5.mp3'
   ];
   const randomIndex = Math.floor(Math.random() * sounds.length);
   const audio = new Audio(sounds[randomIndex]);
@@ -633,6 +635,7 @@ function updateImageBasedOnFlag(flag) {
 function showPowerUp() {
   const powerUp = document.createElement('img');
   powerUp.src = '/plant-clicker/images/GoldenFlowerCoin.png'; // Update path
+  powerUp.setAttribute('onclick', 'playAudio("sfx/goldCoin.wav")');
   powerUp.className = 'power-up';
 
   const container = document.getElementById('game-container');
