@@ -590,9 +590,12 @@ function buyPassive10() {
 
 // Ensure the passive income rates are applied
 function applyPassiveIncome() {
-  score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 + passiveIncomeRate9 + passiveIncomeRate10;
-  updateScoreDisplay();
-  updatePassiveCPS();
+  if (passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 + passiveIncomeRate9 + passiveIncomeRate10 > 0) {
+    playAudio('sfx/click1.mp3');
+    score += passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 + passiveIncomeRate9 + passiveIncomeRate10;
+    updateScoreDisplay();
+    updatePassiveCPS();
+  }
 }
 
 // Call this function every second to apply passive income
