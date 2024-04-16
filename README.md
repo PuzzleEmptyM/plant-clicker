@@ -8,7 +8,7 @@
 - **Narrative**: Follow the life cycle of a mysterious plant species, discovering new plant varieties and learning about their unique habitats and needs.
 
 ### Game Guide
-**Getting Started**: <be>
+**Getting Started**: <br>
 You can access the game here: [Plant Clicker](https://puzzleemptym.github.io/plant-clicker/) <br>
 Click on the main plant image to collect leaves, the primary currency. Use these leaves to purchase your first upgrades.
 
