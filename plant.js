@@ -308,6 +308,7 @@ document.getElementById('reset').addEventListener('click', function() {
   deleteCookie('passiveIncomeRate8');
   deleteCookie('passiveIncomeRate9');
   deleteCookie('passiveIncomeRate10');
+  deleteCookie('flag');
   setCookie('multiplier', multiplier, 7);
   setCookie('upgrade1Cost', upgrade1Cost, 7);
   setCookie('upgrade2Cost', upgrade2Cost, 7);
