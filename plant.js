@@ -644,7 +644,7 @@ function lvl_up() {
     flag += 1;
     score -= lvlUpCost;
     lvlUpCost *= 10;
-    multiplier *=10;
+    multiplier *=5;
     playAudio('sfx/levelUp.wav');
     setCookie('multiplier', multiplier, 7);
     setCookie('lvlUpCost', lvlUpCost, 7);
@@ -660,10 +660,13 @@ function lvl_up() {
   }
   if (flag === 3) {
     plantImg.classList.replace('plantLvl2','plantLvl3');
-    document.getElementById('lvl_up').textContent = 'Next Biome Upgrade: ' + formatNumber(lvlUpCost);
   }
   if (flag === 4) {
-    // reset and go to next biome
+    plantImg.classList.replace('plantLvl3','plantLvl4');
+  }
+  if (flag >= 5) {
+    plantImg.classList.replace('plantLvl4','plantLvl5');
+    document.getElementById('lvl_up').textContent = "5x Clicker Multiplier " + formatNumber(lvlUpCost);
   }
 }
 

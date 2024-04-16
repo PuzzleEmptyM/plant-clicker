@@ -106,6 +106,22 @@ body {
   cursor: pointer;
 }
 
+.plantLvl4 {
+  background: url('images/lvl4plant.png') no-repeat center / contain;
+  border: none;
+  width: 300px; /* Adjust based on your image's aspect ratio */
+  height: 300px; /* Adjust based on your image's aspect ratio */
+  cursor: pointer;
+}
+
+.plantLvl5 {
+  background: url('images/lvl5plant.png') no-repeat center / contain;
+  border: none;
+  width: 300px; /* Adjust based on your image's aspect ratio */
+  height: 300px; /* Adjust based on your image's aspect ratio */
+  cursor: pointer;
+}
+
 /* Store Styling! */
 
 #clickerStore {
