@@ -60,12 +60,12 @@ function updateScoreDisplay() {
 }
 
 function updateMultiplierDisplay() {
-  document.getElementById('multiplier').innerText = `Clicker Multiplier: x${formatNumber(multiplier)}`;
+  document.getElementById('multiplier').innerText = `Clicker: x${formatNumber(multiplier)}`;
 }
 
 function updatePassiveCPS() {
   var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 +passiveIncomeRate9 + passiveIncomeRate10;
-  document.getElementById('passive').innerText = `Passive CPS: ${formatNumber(currentCPS)}`;
+  document.getElementById('passive').innerText = `Passive IPS: ${formatNumber(currentCPS)}`;
 }
 
 function updateUpgradeCosts() {
