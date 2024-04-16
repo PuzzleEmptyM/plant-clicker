@@ -53,17 +53,6 @@ function formatNumber(number) {
 ///////////////////// EVENT LISTENERS & DISPLAY UPDATES ///////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
-// function that checks if page refresh has occured and calls functions
-window.addEventListener('load', function() {
-  // Check if the page was refreshed
-  if (performance.getEntriesByType("navigation")[0].type === "reload") {
-      // Page was refreshed, call your functions here
-      applyPassiveIncome();
-      setInterval(applyPassiveIncome, 1000);
-      // Call any other necessary functions
-  }
-});
-
 function updateScoreDisplay() {
   document.getElementById('score').innerText = formatNumber(score);
 }
@@ -74,7 +63,7 @@ function updateMultiplierDisplay() {
 
 function updatePassiveCPS() {
   var currentCPS = passiveIncomeRate1 + passiveIncomeRate2 + passiveIncomeRate3 + passiveIncomeRate4 + passiveIncomeRate5 + passiveIncomeRate6 + passiveIncomeRate7 + passiveIncomeRate8 +passiveIncomeRate9 + passiveIncomeRate10;
-  document.getElementById('passive').innerText = `Passive CPS: ${formatNumber(currentCPS * 2)}`;
+  document.getElementById('passive').innerText = `Passive CPS: ${formatNumber(currentCPS)}`;
 }
 
 function updateUpgradeCosts() {
@@ -324,8 +313,6 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('passive8Cost', passive8Cost, 7);
   setCookie('passive9Cost', passive9Cost, 7);
   setCookie('passive10Cost', passive10Cost, 7);
-  setCookie('passive11Cost', passive11Cost, 7);
-  setCookie('passive12Cost', passive12Cost, 7);
   setCookie('passiveIncomeRate1', passiveIncomeRate1, 7);
   setCookie('passiveIncomeRate2', passiveIncomeRate2, 7);
   setCookie('passiveIncomeRate3', passiveIncomeRate3, 7);
@@ -337,6 +324,7 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('passiveIncomeRate9', passiveIncomeRate9, 7);
   setCookie('passiveIncomeRate10', passiveIncomeRate10, 7);
   setCookie('flag', flag, 7);
+  location.reload();
 });
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -422,7 +410,7 @@ function buyPassive1() {
   if (score >= passive1Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive1Cost;
-    passiveIncomeRate1 += 1; // Increase passive income rate
+    passiveIncomeRate1 += 5; // Increase passive income rate
     passive1Cost *= 1.2; // Increase the cost for the next purchase
 
     updateScoreDisplay();
@@ -439,7 +427,7 @@ function buyPassive2() {
   if (score >= passive2Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive2Cost;
-    passiveIncomeRate2 += 15; // Increase passive income rate more significantly
+    passiveIncomeRate2 += 75; // Increase passive income rate more significantly
     passive2Cost *= 1.5;
 
     updateScoreDisplay();
@@ -456,7 +444,7 @@ function buyPassive3() {
   if (score >= passive3Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive3Cost;
-    passiveIncomeRate3 += 60; // Even more significant increase
+    passiveIncomeRate3 += 250; // Even more significant increase
     passive3Cost *= 2;
 
     updateScoreDisplay();
@@ -473,7 +461,7 @@ function buyPassive4() {
   if (score >= passive4Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive4Cost;
-    passiveIncomeRate4 += 120; // Even more significant increase
+    passiveIncomeRate4 += 1000; // Even more significant increase
     passive4Cost *= 2.2;
 
     updateScoreDisplay();
@@ -490,7 +478,7 @@ function buyPassive5() {
   if (score >= passive5Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive5Cost;
-    passiveIncomeRate5 += 300; // Even more significant increase
+    passiveIncomeRate5 += 2000; // Even more significant increase
     passive5Cost *= 2.5;
 
     updateScoreDisplay();
@@ -507,7 +495,7 @@ function buyPassive6() {
   if (score >= passive6Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive6Cost;
-    passiveIncomeRate6 += 500; // Even more significant increase
+    passiveIncomeRate6 += 5000; // Even more significant increase
     passive6Cost *= 3;
 
     updateScoreDisplay();
@@ -524,7 +512,7 @@ function buyPassive7() {
   if (score >= passive7Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive7Cost;
-    passiveIncomeRate7 += 750; // Even more significant increase
+    passiveIncomeRate7 += 7500; // Even more significant increase
     passive7Cost *= 3.2;
 
     updateScoreDisplay();
@@ -541,7 +529,7 @@ function buyPassive8() {
   if (score >= passive8Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive8Cost;
-    passiveIncomeRate8 += 1000; // Even more significant increase
+    passiveIncomeRate8 += 10000; // Even more significant increase
     passive8Cost *= 3.5;
 
     updateScoreDisplay();
@@ -558,7 +546,7 @@ function buyPassive9() {
   if (score >= passive9Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive9Cost;
-    passiveIncomeRate9 += 1500; // Even more significant increase
+    passiveIncomeRate9 += 15000; // Even more significant increase
     passive9Cost *= 4;
 
     updateScoreDisplay();
@@ -575,7 +563,7 @@ function buyPassive10() {
   if (score >= passive10Cost) {
     playAudio('sfx/purchase.mp3');
     score -= passive10Cost;
-    passiveIncomeRate10 += 3000; // Even more significant increase
+    passiveIncomeRate10 += 30000; // Even more significant increase
     passive10Cost *= 4.2;
 
     updateScoreDisplay();
