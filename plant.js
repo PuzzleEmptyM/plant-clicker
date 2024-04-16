@@ -320,6 +320,23 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('flag', flag, 7);
 });
 
+// Audio Functions
+
+function playAudio(url) {
+  const audio = new Audio(url);
+  audio.play();
+}
+
+function randomClickSound() {
+  const sounds = [
+    'sfx/click1.mp3',
+    'sfx/click2.mp3',
+    'sfx/click3.mp3'
+  ];
+  const randomIndex = Math.floor(Math.random() * sounds.length);
+  const audio = new Audio(sounds[randomIndex]);
+  audio.play();
+}
 
 // Functions to handle purchasing upgrades
 function buyUpgrade1() {
