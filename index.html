@@ -31,8 +31,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="images/gear_icon.png" alt="settings">Settings</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Music On <img src="images/sound_icon.png" alt="soundOn" height="30px" width="30px"></a></li>
-                <li><a class="dropdown-item" href="#" >Music Off <img src="images/sound_off_icon.png" alt="soundOff" height="33px" width="30px"></a></li>
+                <li onclick="bgMusicOn()"><a class="dropdown-item" href="#">Music On <img src="images/sound_icon.png" alt="soundOn" height="30px" width="30px"></a></li>
+                <li onclick="bgMusicOff()"><a class="dropdown-item" href="#" >Music Off <img src="images/sound_off_icon.png" alt="soundOff" height="33px" width="30px"></a></li>
                 <li><button id="reset" class="btn btn-danger d-flex container"><span class="mx-auto reset_text">RESET</span></button></li>
               </ul>
             </li>
@@ -48,7 +48,7 @@
       </div>
     </nav>
   </header>
-  <div class="everything_container  container-fluid row flex-column-reverse mx-auto flex-md-row" id="everything-container">
+  <div class="everything_container row flex-column-reverse mx-auto flex-md-row" id="everything-container">
     <section class="container col-12 col-lg-4 text-center" id="passiveStore" style="border: 3px solid white;">
       <div id="passiveStore">
         <h1>Passive Income</h1>
@@ -81,9 +81,11 @@
       <div id="clickerStore">
         <h1>Clicker Store</h1>
         <div class="mt-4" id="purchases">
-        <button class="btn btn-success" id="upgrade1" onclick="buyUpgrade1()" style="border: 2px solid white; font-size: 25px;">Quality Soil - Cost: 50</button><br>
+        <button class="btn btn-success" id="upgrade1" onclick="buyUpgrade1()" style="border: 2px solid white; font-size: 25px; background-color: #3d2c06;">Quality Soil - Cost: 50</button><br>
         <button class="btn btn-info" id="upgrade2" onclick="buyUpgrade2()" style="border: 2px solid white; font-size: 25px;">Enhanced Water - Cost: 200</button><br>
         <button class="btn btn-secondary" id="upgrade3" onclick="buyUpgrade3()" style="border: 2px solid white; font-size: 25px;">Gardening Tools - Cost: 500</button><br>
+        <button class="btn btn-secondary" id="upgrade4" onclick="buyUpgrade4()" style="border: 2px solid white; font-size: 25px; background-color: #6eb25a;">Fertilizer - Cost: 1500</button><br>
+        <button class="btn btn-secondary" id="upgrade5" onclick="buyUpgrade5()" style="border: 2px solid white; font-size: 25px; background-color: #282828;">Carbon Dose - Cost: 5000</button><br>
         <button class="btn btn-warning" id="lvl_up" onclick="lvl_up()" style="border: 2px solid white; font-size: 25px;">LVL UP - Cost: 10000</button><br>
         </div>
       </div>

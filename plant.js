@@ -31,6 +31,8 @@ let passiveIncomeRate10 = 0;
 let upgrade1Cost = 50;
 let upgrade2Cost = 200;
 let upgrade3Cost = 500;
+let upgrade4Cost = 1500;
+let upgrade5Cost = 5000;
 // variable that holds plant lvl cost
 let lvlUpCost = 10000;
 
@@ -70,6 +72,8 @@ function updateUpgradeCosts() {
   document.getElementById('upgrade1').innerText = `Quality Soil (+1 multiplier) - Cost: ${formatNumber(upgrade1Cost)}`;
   document.getElementById('upgrade2').innerText = `Enhanced Water (+2 multiplier) - Cost: ${formatNumber(upgrade2Cost)}`;
   document.getElementById('upgrade3').innerText = `Gardening Tools (+3 multiplier) - Cost: ${formatNumber(upgrade3Cost)}`;
+  document.getElementById('upgrade4').innerText = `Fertilizer (+5 multiplier) - Cost: ${formatNumber(upgrade4Cost)}`;
+  document.getElementById('upgrade5').innerText = `Carbon Dose (+25 multiplier) - Cost: ${formatNumber(upgrade5Cost)}`;
   document.getElementById('lvl_up').innerText = `LVL UP! - Cost: ${formatNumber(lvlUpCost)}`;
   // Passive Income <->
   document.getElementById('passive1').innerText = `Better Sunlight - Cost: ${formatNumber(passive1Cost)}`;
@@ -195,6 +199,14 @@ window.addEventListener('load', function() {
   if (savedUpgrade3Cost) {
     upgrade3Cost = parseInt(savedUpgrade3Cost, 10);
   }
+  let savedUpgrade4Cost = getCookie('upgrade4Cost');
+  if (savedUpgrade4Cost) {
+    upgrade4Cost = parseInt(savedUpgrade4Cost, 10);
+  }
+  let savedUpgrade5Cost = getCookie('upgrade5Cost');
+  if (savedUpgrade5Cost) {
+    upgrade5Cost = parseInt(savedUpgrade5Cost, 10);
+  }
 
   let savedLvlUpCost = getCookie('lvlUpCost');
   if (savedLvlUpCost) {
@@ -235,6 +247,8 @@ document.getElementById('reset').addEventListener('click', function() {
   upgrade1Cost = 50;
   upgrade2Cost = 200;
   upgrade3Cost = 500;
+  upgrade4Cost = 1500;
+  upgrade5Cost = 5000;
   lvlUpCost = 10000;
   passive1Cost = 500;
   passive2Cost = 1000;
@@ -274,6 +288,8 @@ document.getElementById('reset').addEventListener('click', function() {
   deleteCookie('upgrade1Cost');
   deleteCookie('upgrade2Cost');
   deleteCookie('upgrade3Cost');
+  deleteCookie('upgrade4Cost');
+  deleteCookie('upgrade5Cost');
   deleteCookie('lvlUpCost');
   deleteCookie('passive1Cost');
   deleteCookie('passive2Cost');
@@ -302,6 +318,8 @@ document.getElementById('reset').addEventListener('click', function() {
   setCookie('upgrade1Cost', upgrade1Cost, 7);
   setCookie('upgrade2Cost', upgrade2Cost, 7);
   setCookie('upgrade3Cost', upgrade3Cost, 7);
+  setCookie('upgrade4Cost', upgrade4Cost, 7);
+  setCookie('upgrade5Cost', upgrade5Cost, 7);
   setCookie('lvlUpCost', lvlUpCost, 7);
   setCookie('passive1Cost', passive1Cost, 7);
   setCookie('passive2Cost', passive2Cost, 7);
@@ -349,6 +367,14 @@ function randomClickSound() {
   audio.play();
 }
 
+var bgMusic = new Audio('sfx/bgMusic.mp3');
+function bgMusicOn() {
+  bgMusic.play();
+}
+
+function bgMusicOff() {
+  bgMusic.pause();
+}
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// BUY UPGRADES ////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
@@ -397,6 +423,38 @@ function buyUpgrade3() {
     updateUpgradeCosts();
     updateMultiplierDisplay();
     setCookie('upgrade3Cost', upgrade3Cost, 7);
+  } else {
+    playAudio('sfx/nope.wav');
+  }
+}
+
+function buyUpgrade4() {
+  if (score >= upgrade4Cost) {
+    playAudio('sfx/purchase.mp3');
+    score -= upgrade4Cost;
+    multiplier += 5;
+    upgrade4Cost *= 2.5;
+    setCookie('multiplier', multiplier, 7);
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updateMultiplierDisplay();
+    setCookie('upgrade4Cost', upgrade4Cost, 7);
+  } else {
+    playAudio('sfx/nope.wav');
+  }
+}
+
+function buyUpgrade5() {
+  if (score >= upgrade5Cost) {
+    playAudio('sfx/purchase.mp3');
+    score -= upgrade5Cost;
+    multiplier += 25;
+    upgrade5Cost *= 2.5;
+    setCookie('multiplier', multiplier, 7);
+    updateScoreDisplay();
+    updateUpgradeCosts();
+    updateMultiplierDisplay();
+    setCookie('upgrade5Cost', upgrade5Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
   }

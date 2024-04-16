@@ -26,7 +26,25 @@ body {
 
 @media screen and (max-width: 1300px) {
   #game-container {
-    padding-top: 11rem !important; 
+    padding-top: 5rem !important; 
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  #game-container {
+    padding-top: 7rem !important; 
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  #game-container {
+    padding-top: 10rem !important; 
+  }
+}
+
+@media screen and (max-width: 1038px) {
+  #game-container {
+    padding-top: 13rem !important; 
   }
 }
 
