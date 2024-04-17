@@ -393,6 +393,11 @@ function buyUpgrade1() {
     setCookie('upgrade1Cost', upgrade1Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('upgrade1').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('upgrade1').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -409,6 +414,11 @@ function buyUpgrade2() {
     setCookie('upgrade2Cost', upgrade2Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('upgrade2').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('upgrade2').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -425,6 +435,11 @@ function buyUpgrade3() {
     setCookie('upgrade3Cost', upgrade3Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('upgrade3').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('upgrade3').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -441,6 +456,11 @@ function buyUpgrade4() {
     setCookie('upgrade4Cost', upgrade4Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('upgrade4').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('upgrade4').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -457,6 +477,11 @@ function buyUpgrade5() {
     setCookie('upgrade5Cost', upgrade5Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('upgrade5').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('upgrade5').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -478,6 +503,11 @@ function buyPassive1() {
     setCookie('passive1Cost', passive1Cost, 7); // Save updated cost
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive1').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive1').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -495,6 +525,11 @@ function buyPassive2() {
     setCookie('passive2Cost', passive2Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive2').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive2').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -512,6 +547,11 @@ function buyPassive3() {
     setCookie('passive3Cost', passive3Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive3').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive3').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -529,6 +569,11 @@ function buyPassive4() {
     setCookie('passive4Cost', passive4Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive4').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive4').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -546,6 +591,11 @@ function buyPassive5() {
     setCookie('passive5Cost', passive5Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive5').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive5').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -563,6 +613,11 @@ function buyPassive6() {
     setCookie('passive6Cost', passive6Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive6').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive6').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -580,6 +635,11 @@ function buyPassive7() {
     setCookie('passive7Cost', passive7Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive7').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive7').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -597,6 +657,11 @@ function buyPassive8() {
     setCookie('passive8Cost', passive8Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive8').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive8').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -614,6 +679,11 @@ function buyPassive9() {
     setCookie('passive9Cost', passive9Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive9').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive9').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -631,6 +701,11 @@ function buyPassive10() {
     setCookie('passive10Cost', passive10Cost, 7);
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('passive10').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('passive10').classList.remove('bounceWobble');
+    }, 100);
   }
 }
 
@@ -721,6 +796,11 @@ function lvl_up() {
     updateMultiplierDisplay();
   } else {
     playAudio('sfx/nope.wav');
+    document.getElementById('lvl_up').classList.add('bounceWobble');
+
+    setTimeout(() => {
+      document.getElementById('lvl_up').classList.remove('bounceWobble');
+    }, 100);
   }
   if (flag === 2) {
     plantImg.classList.replace('plantLvl1','plantLvl2');
