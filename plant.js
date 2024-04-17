@@ -868,5 +868,5 @@ function showPowerUp() {
   }, 5000); // 5 seconds
 }
 
-// Show the power-up randomly once every 1,000 seconds
-setInterval(showPowerUp, 10000);
+// Show the power-up randomly once every 10 min
+setInterval(showPowerUp, 600000);
