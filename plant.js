@@ -122,9 +122,13 @@ window.addEventListener('load', function() {
   let savedFlag = getCookie('flag');
   console.log('Loaded flag from cookie:', savedFlag);
   if (savedFlag) {
-    flag = parseInt(savedFlag, 10);
+    let flag = parseInt(savedFlag, 10);
+    if (flag > 5) {
+      flag = 5;
+    }
     updateImageBasedOnFlag(flag);  // Ensure image updates on load
   }
+  
 
   let savedScore = getCookie('score');
   if (savedScore) {
@@ -869,4 +873,4 @@ function showPowerUp() {
 }
 
 // Show the power-up randomly once every 10 min
-setInterval(showPowerUp, 600000);
+setInterval(showPowerUp, 6000000);
