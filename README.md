@@ -45,4 +45,4 @@ Click on the main plant image to collect leaves, the primary currency. Use these
 
 ---
 
-Created April 2024 by Puzzle Moser and Eric Dzyk
+Created April 2024 by [Puzzle Moser](https://www.linkedin.com/in/puzzlemoser/) and [Eric Dzyk](https://www.linkedin.com/in/ericdzyk/).
